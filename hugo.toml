@@ -3,4 +3,13 @@ languageCode = "fr"
 title = "La Forge du Web"
 
 [params]
+env = "dev" # ou "prod"
+title = "Création de site internet & Optimisation pour les moteurs de recherche | La Forge du Web"
 description = "Création de sites web éco-responsables et performants"
+
+[taxonomies]
+category = ""
+tag = ""
+
+[outputs]
+home = [ "HTML", "RSS", "SITEMAP" ]
