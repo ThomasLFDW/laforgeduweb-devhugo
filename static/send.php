@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
+$config = require __DIR__ . '/config.mail.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -20,15 +21,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         $mail->isSMTP();
-        $mail->Host = 'mail.infomaniak.com';
+        $mail->Host = $config['host'];
         $mail->SMTPAuth = true;
-        $mail->Username = 'site@ton-domaine.com'; // ton adresse d’envoi
-        $mail->Password = 'TON_MDP_INFOMANIAK';   // mot de passe SMTP
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
+        $mail->Username = $config['username'];
+        $mail->Password = $config['password'];
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
 
-        $mail->setFrom('site@ton-domaine.com', 'La Forge du Web');
-        $mail->addAddress('ton-email@ton-domaine.com');
+        $mail->setFrom($config['username'], $config['name']);
+        $mail->addAddress($config['username']);
         $mail->addReplyTo($email, $name);
 
         $mail->Subject = 'Nouveau message depuis le site';

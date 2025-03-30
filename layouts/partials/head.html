@@ -31,3 +31,54 @@
         {{ end }}
     {{ end }}
 {{ end }}
+
+
+<title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+<meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" href="/images/favicon.ico">
+
+<!-- Open Graph / Facebook -->
+{{/*<meta property="og:type" content="website">*/}}
+{{/*<meta property="og:title" content="{{ .Title }}">*/}}
+{{/*<meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">*/}}
+{{/*<meta property="og:url" content="{{ .Permalink }}">*/}}
+{{/*<meta property="og:site_name" content="{{ .Site.Title }}">*/}}
+{{/*<meta property="og:image" content="{{ .Site.BaseURL }}images/og-cover.jpg">*/}}
+
+<!-- Twitter Card -->
+{{/*<meta name="twitter:card" content="summary_large_image">*/}}
+{{/*<meta name="twitter:title" content="{{ .Title }}">*/}}
+{{/*<meta name="twitter:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">*/}}
+{{/*<meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-cover.jpg">*/}}
+
+<!-- Viewport & Language -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "La Forge du Web",
+        "url": "https://laforgeduweb.fr",
+        "logo": "/images/laforgeduweb.webp",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+33632899791",
+            "contactType": "Customer Service",
+            "email": "contact@laforgeduweb.fr"
+        }
+    }
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-21DT4Y7Z3B"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-21DT4Y7Z3B');
+</script>
