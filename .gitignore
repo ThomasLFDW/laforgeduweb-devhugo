@@ -1,0 +1,15 @@
+# Hugo build
+/public/
+/resources/
+
+# PHP vendors
+/vendor/
+composer.lock
+
+# IDE
+.idea/
+*.log
+.DS_Store
+
+# Hugo build lock
+.hugo_build.lock

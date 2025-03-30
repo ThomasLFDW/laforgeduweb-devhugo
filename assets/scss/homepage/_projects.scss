@@ -1,0 +1,72 @@
+@use "../variables" as *;
+
+.realisations-carousel {
+  padding: $spacing-section 1rem;
+  text-align: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/images/backgrounds/bg-triangle-pattern.svg");
+  background-position: right center;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-top: 0;
+  }
+
+  .glide {
+    position: relative;
+
+    &__slide {
+      text-align: center;
+      transform: scale(0.8);
+      transition: transform 0.4s ease;
+      opacity: 0.6;
+
+      img {
+        width: 100%;
+        max-width: 320px;
+        border-radius: 12px;
+      }
+
+      .title {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        color: $color-primary;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: $color-dark;
+      }
+    }
+
+    .glide__slide.glide__slide--active {
+      transform: scale(1);
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .glide__arrow {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: $color-primary;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+
+      &--left {
+        left: -1.5rem;
+      }
+
+      &--right {
+        right: -1.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use "variables" ;
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 variables.$spacing-container;
+}
+
+section {
+  padding: variables.$spacing-section 0;
+}

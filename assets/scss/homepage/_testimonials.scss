@@ -1,0 +1,90 @@
+@use "../variables" as *;
+
+.testimonials-masonry {
+  padding: 3rem 0 0;
+  text-align: center;
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  .testimonials-scroll {
+    position: relative;
+    height: 700px;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: -webkit-linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/images/backgrounds/bg-bees-pattern.svg");
+    background-position: left center;
+  }
+
+  .testimonials-grid {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    animation: scroll-up 30s linear infinite;
+    margin: 3rem auto;
+
+    &:hover, &:focus-within {
+      animation-play-state: paused;
+    }
+  }
+
+  .testimonial-card {
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    text-decoration: none;
+    color: $color-accent;
+    width: 350px;
+    gap: 0 1rem;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .author {
+      margin-top: 0;
+      font-weight: bold;
+      color: $color-primary;
+      flex: 1;
+    }
+
+    .stars {
+      margin-top: 0.5rem;
+      flex: 100%;
+    }
+
+    .message {
+      font-style: italic;
+      line-height: 1.5;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}

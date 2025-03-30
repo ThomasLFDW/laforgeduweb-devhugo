@@ -1,0 +1,48 @@
+@use "../variables" as *;
+
+.stats-section {
+  background: $color-dark;
+  color: $color-light;
+  padding: $spacing-section 1rem;
+  text-align: center;
+
+  .container {
+    max-width: 100%;
+  }
+
+  h2 {
+    color: $color-primary;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .stat-item {
+    max-width: 240px;
+
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: $color-primary;
+      line-height: 1;
+    }
+
+    .label {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .desc {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 0.3rem;
+    }
+  }
+}

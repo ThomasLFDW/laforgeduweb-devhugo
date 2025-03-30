@@ -1,0 +1,33 @@
+{{ if site.Params.glideCss }}
+    <link rel="stylesheet" href="{{ site.Params.glideCss }}" crossorigin="anonymous">
+{{ end }}
+
+{{ if or site.Params.gFontTitle site.Params.gFontContent }}
+    <link rel="preconnect" href="{{ site.Params.googleapis }}">
+    <link rel="preconnect" href="{{ site.Params.gstatic }}" crossorigin>
+    {{ if site.Params.gFontTitle }}
+        <link href="{{ site.Params.gFontTitle }}" rel="stylesheet">
+    {{ else if site.Params.gFontContent }}
+        <link href="{{ site.Params.gFontContent }}" rel="stylesheet">
+    {{ end }}
+{{ end }}
+
+{{ with resources.Get "scss/main.scss" }}
+    {{ $opts := dict
+            "enableSourceMap" (not hugo.IsProduction)
+            "sourceMapIncludeSources" (not hugo.IsProduction)
+            "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
+            "targetPath" "css/main.css"
+            "transpiler" "dartsass"
+    }}
+    {{ with . | toCSS $opts }}
+        {{ if hugo.IsProduction }}
+            {{ with . | fingerprint }}
+                <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"
+                      crossorigin="anonymous">
+            {{ end }}
+        {{ else }}
+            <link rel="stylesheet" href="{{ .RelPermalink }}">
+        {{ end }}
+    {{ end }}
+{{ end }}

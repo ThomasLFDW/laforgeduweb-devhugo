@@ -1,0 +1,54 @@
+@use "../variables";
+
+.services-section {
+  background-size: auto 110%;
+  background-image: url("/images/backgrounds/bg-sticks-pattern.svg");
+  background-position: right 75% center;
+  border-top: 5px solid variables.$color-primary;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: variables.$color-accent;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    .service-item {
+      color: variables.$color-dark;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+      border: 1px solid variables.$color-dark;
+      background: variables.$color-light;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        color: variables.$color-primary;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+
+      ul {
+        text-align: left;
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  .btn {
+    padding: 1rem 4rem;
+  }
+}

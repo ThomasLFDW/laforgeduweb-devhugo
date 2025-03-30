@@ -1,0 +1,73 @@
+@use "../variables" as *;
+
+.who-section {
+  background-image: url("/images/backgrounds/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right -45% center;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .services-media {
+    flex: 1 1 350px;
+    text-align: center;
+
+    img {
+      max-width: 400px;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .services-content {
+    flex: 1 1 500px;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    .highlight {
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .service-benefits {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 2rem;
+
+      li {
+        padding-left: 1.5rem;
+        position: relative;
+        margin-bottom: 0.75rem;
+
+        &::before {
+          content: "✔";
+          position: absolute;
+          left: 0;
+          color: $color-primary;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

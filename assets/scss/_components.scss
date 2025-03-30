@@ -1,0 +1,130 @@
+@use "variables" as *;
+
+.btn {
+  background: $color-accent;
+  color: $color-primary;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid $color-accent;
+
+  &.--light {
+    &:hover {
+      background: $color-light;
+      border-color: $color-primary;
+    }
+  }
+
+  &:hover {
+    background: $color-primary;
+    color: $color-accent;
+    border-color: $color-accent;
+  }
+}
+
+.section-cta {
+  background: $color-primary;
+  color: $color-light;
+  padding: $spacing-section;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $color-accent;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    color: $color-accent;
+  }
+
+  .btn {
+    background: $color-accent;
+    color: $color-primary;
+
+    &:hover {
+      background: $color-primary;
+      color: $color-accent;
+    }
+  }
+}
+
+.glide {
+  &__bullets {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1.5rem;
+
+    .glide__bullet {
+      width: 10px;
+      height: 10px;
+      background: rgba(128, 128, 128, 0.25);
+      border-radius: 5px;
+      transition: width 0.3s;
+      border: none;
+
+      &.glide__bullet--active {
+        width: 24px;
+        background: rgba(128, 128, 128, 0.50);
+      }
+    }
+  }
+
+  .glide__arrow {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: $color-primary;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    &--left {
+      left: -1.5rem;
+    }
+
+    &--right {
+      right: -1.5rem;
+    }
+  }
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.popup-content {
+  background: #fff;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 8px;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}

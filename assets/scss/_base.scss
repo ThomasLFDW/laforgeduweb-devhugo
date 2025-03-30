@@ -1,0 +1,44 @@
+@use "variables";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; // hauteur de ton header (ajuste si besoin)
+}
+
+body {
+  font-family: variables.$font-main;
+  font-size: variables.$font-size-base;
+  margin: 0;
+  background-color: variables.$color-light;
+  color: variables.$color-dark;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: variables.$font-title, sans-serif;
+  color: variables.$color-accent;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+section:first-of-type {
+  padding-bottom: 4rem;
+}
+
+section:last-of-type {
+  padding-bottom: 4rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

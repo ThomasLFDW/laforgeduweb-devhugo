@@ -1,0 +1,51 @@
+@use "../variables" as *;
+@use "sass:color";
+
+.faq-section {
+  background: $color-light;
+  padding: $spacing-section 1rem;
+
+  .container {
+    max-width: 800px;
+  }
+
+  h2 {
+    text-align: center;
+    color: $color-accent;
+    margin-bottom: 2rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid color.scale($color-dark, $lightness: 68%);;
+    margin-bottom: 1rem;
+
+    .faq-question {
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 1rem;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      color: $color-dark;
+      transition: background 0.3s;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.03);
+      }
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 1rem;
+    }
+
+    &.active .faq-answer {
+      max-height: 500px;
+      padding: 1rem;
+    }
+  }
+}

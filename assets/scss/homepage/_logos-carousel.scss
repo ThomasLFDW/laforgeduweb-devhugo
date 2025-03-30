@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Logos Carousel
+   Description: Styles for the logos carousel.
+   Dependencies: Variables for backgrounds-image colors
+   ========================================================================== */
+@use "../variables";
+
+.logos-carousel {
+  background-image: linear-gradient(180deg,variables.$color-primary 0%,rgba(255,255,255,0) 100%);
+  padding: 2rem 0;
+  overflow: hidden;
+
+  .carousel-track {
+    display: flex;
+    gap: 3rem;
+    width: fit-content;
+    animation: scroll-left 30s linear infinite;
+
+    img {
+      height: 40px;
+      width: auto;
+      opacity: 0.8;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
