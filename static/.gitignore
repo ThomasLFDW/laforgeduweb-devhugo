@@ -1,6 +1,0 @@
-# Logs ou fichiers système
-.DS_Store
-*.log
-
-# Passwords File
-config.mail.example.php

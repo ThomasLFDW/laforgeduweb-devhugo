@@ -14,5 +14,6 @@ composer.lock
 # Hugo build lock
 .hugo_build.lock
 
-# Passwords File
+# Sensitive files
 config.mail.php
+deploy.sh
