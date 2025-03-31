@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# NEED SSHPASS INSTALLED (brew install sshpass or apt-get install sshpass)
+
 # === Configuration ===
 USER="ton-identifiant-ssh"
 HOST="sshXXX.infomaniak.com"
