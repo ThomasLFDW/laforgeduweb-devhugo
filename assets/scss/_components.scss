@@ -112,19 +112,39 @@
 }
 
 .popup-content {
-  background: #fff;
+  background-color: #fff;
+  max-width: 600px;
+  width: 100%;
   padding: 2rem;
-  max-width: 500px;
-  width: 90%;
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   position: relative;
-}
+  animation: fadeInUp 0.3s ease;
+  max-height: 100vh;
+  overflow: hidden auto;
 
-.popup-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    input,
+    textarea {
+      padding: 0.8rem 1rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: $color-accent;
+  }
 }
