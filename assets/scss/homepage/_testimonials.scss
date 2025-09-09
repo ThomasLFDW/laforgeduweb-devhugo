@@ -3,6 +3,7 @@
 .testimonials-masonry {
   padding: 3rem 0 0;
   text-align: center;
+  background-image: linear-gradient(180deg,$color-g-dark 95%,$color-g-light 100%);
 
   .container {
     max-width: none;
@@ -10,15 +11,16 @@
   }
 
   h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    color: $color-light;
   }
 
   .testimonials-scroll {
     position: relative;
     height: 700px;
     overflow: hidden;
-    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: -webkit-linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 2%, black 95%, transparent 100%);
+    -webkit-mask-image: -webkit-linear-gradient(to bottom, transparent 0%, black 2%, black 95%, transparent 100%);
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url("/images/backgrounds/bg-bees-pattern.svg");
@@ -40,14 +42,14 @@
   .testimonial-card {
     display: flex;
     flex-wrap: wrap;
-    background: white;
+    background: $color-bg;
     border-radius: 12px;
     margin-bottom: 20px;
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: left;
     text-decoration: none;
-    color: $color-accent;
+    color: $color-g-dark;
     width: 350px;
     gap: 0 1rem;
 
@@ -63,7 +65,7 @@
     .author {
       margin-top: 0;
       font-weight: bold;
-      color: $color-primary;
+      color: $color-g-dark;
       flex: 1;
     }
 

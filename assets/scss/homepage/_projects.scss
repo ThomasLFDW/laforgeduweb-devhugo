@@ -3,13 +3,17 @@
 .realisations-carousel {
   padding: $spacing-section 1rem;
   text-align: center;
-  background-size: contain;
+  background-size: 75vh;
   background-repeat: no-repeat;
-  background-image: url("/images/backgrounds/bg-triangle-pattern.svg");
-  background-position: right center;
+  background-image: url("/images/backgrounds/bg-trees-pattern.svg");
+  background-position: right -20% bottom;
 
   h2 {
     margin-bottom: 0;
+  }
+
+  h3 {
+    margin-bottom: .5rem;
   }
 
   p {
@@ -18,6 +22,7 @@
 
   .glide {
     position: relative;
+    margin-top: 3rem;
 
     &__slide {
       text-align: center;
@@ -34,12 +39,10 @@
       .title {
         margin-top: 1rem;
         font-size: 1.1rem;
-        color: $color-primary;
       }
 
       p {
         font-size: 0.9rem;
-        color: $color-dark;
       }
     }
 
@@ -53,11 +56,10 @@
       background: none;
       border: none;
       font-size: 2rem;
-      color: $color-primary;
+      color: $color-g-dark;
       cursor: pointer;
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      top: calc(50% - 60px);
       z-index: 5;
 
       &--left {
@@ -67,6 +69,10 @@
       &--right {
         right: -1.5rem;
       }
+    }
+
+    .glide__bullets {
+      margin-top: 0;
     }
   }
 }

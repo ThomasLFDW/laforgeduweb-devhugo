@@ -2,7 +2,7 @@
 @use "sass:color";
 
 .faq-section {
-  background: $color-light;
+  background: $color-g-light;
   padding: $spacing-section 1rem;
 
   .container {
@@ -11,12 +11,12 @@
 
   h2 {
     text-align: center;
-    color: $color-accent;
+    color: $color-light;
     margin-bottom: 2rem;
   }
 
   .faq-item {
-    border-bottom: 1px solid color.scale($color-dark, $lightness: 68%);;
+    border-bottom: 1px solid color.scale($color-g-dark, $lightness: 68%);;
     margin-bottom: 1rem;
 
     .faq-question {
@@ -28,7 +28,7 @@
       width: 100%;
       text-align: left;
       cursor: pointer;
-      color: $color-dark;
+      color: $color-light;
       transition: background 0.3s;
 
       &:hover {

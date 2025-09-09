@@ -1,4 +1,4 @@
-@use "variables";
+@use "variables" as *;
 
 html {
   scroll-behavior: smooth;
@@ -6,17 +6,17 @@ html {
 }
 
 body {
-  font-family: variables.$font-main;
-  font-size: variables.$font-size-base;
+  font-family: $font-main;
+  font-size: $font-size-base;
   margin: 0;
-  background-color: variables.$color-light;
-  color: variables.$color-dark;
+  background-color: $color-bg;
+  color: $color-g-dark;
   line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: variables.$font-title, sans-serif;
-  color: variables.$color-accent;
+  font-family: $font-title, sans-serif;
+  color: $color-g-dark;
   margin-top: 0;
 }
 

@@ -4,7 +4,7 @@
   background-image: url("/images/backgrounds/bg-pattern.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right -45% center;
+  background-position: right -65% center;
 
   .container {
     max-width: 1200px;
@@ -64,7 +64,7 @@
           content: "✔";
           position: absolute;
           left: 0;
-          color: $color-primary;
+          color: $color-g-light;
           font-weight: bold;
         }
       }

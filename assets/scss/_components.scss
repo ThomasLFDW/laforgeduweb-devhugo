@@ -1,8 +1,8 @@
 @use "variables" as *;
 
 .btn {
-  background: $color-accent;
-  color: $color-primary;
+  background: $color-g-light;
+  color: $color-g-dark;
   text-transform: uppercase;
   padding: 1rem 2rem;
   border-radius: 30px;
@@ -10,47 +10,48 @@
   transition: background 0.3s;
   display: inline-block;
   text-decoration: none;
-  border: 2px solid $color-accent;
+  border: 2px solid $color-g-light;
 
   &.--light {
+    background: $color-g-dark;
+    color: $color-light;
+    border-color: $color-g-dark;
+
     &:hover {
       background: $color-light;
-      border-color: $color-primary;
+      color: $color-g-dark;
+      border-color: $color-g-dark;
     }
   }
 
+
+
   &:hover {
-    background: $color-primary;
-    color: $color-accent;
-    border-color: $color-accent;
+    background: $color-g-dark;
+    color: $color-g-light;
+    border-color: $color-g-light;
   }
 }
 
 .section-cta {
-  background: $color-primary;
-  color: $color-light;
-  padding: $spacing-section;
+  background: $color-g-light;
+  color: $color-g-light;
   text-align: center;
+
+  &:last-child {
+    padding: $spacing-section;
+    background: $color-light;
+    color: $color-g-dark;
+  }
 
   h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: $color-accent;
+    color: $color-g-dark;
   }
 
   p {
     margin-bottom: 2rem;
-    color: $color-accent;
-  }
-
-  .btn {
-    background: $color-accent;
-    color: $color-primary;
-
-    &:hover {
-      background: $color-primary;
-      color: $color-accent;
-    }
   }
 }
 
@@ -80,7 +81,7 @@
     background: none;
     border: none;
     font-size: 2rem;
-    color: $color-primary;
+    color: $color-g-light;
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -145,6 +146,6 @@
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: $color-accent;
+    color: $color-g-dark;
   }
 }

@@ -1,6 +1,6 @@
 baseURL = "http://localhost:1313/"
 languageCode = "fr"
-title = "La Forge du Web"
+title = "L'Éco Forge du Web"
 
 [params]
 env = "dev" # ou "prod"

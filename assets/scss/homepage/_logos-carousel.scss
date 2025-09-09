@@ -3,10 +3,10 @@
    Description: Styles for the logos carousel.
    Dependencies: Variables for backgrounds-image colors
    ========================================================================== */
-@use "../variables";
+@use "../variables" as *;
 
 .logos-carousel {
-  background-image: linear-gradient(180deg,variables.$color-primary 0%,rgba(255,255,255,0) 100%);
+  background: $color-g-dark;
   padding: 2rem 0;
   overflow: hidden;
 
@@ -30,6 +30,10 @@
 }
 
 @keyframes scroll-left {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

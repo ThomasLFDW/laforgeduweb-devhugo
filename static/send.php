@@ -1,14 +1,18 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
-$config = require __DIR__ . '/config.mail.php';
+header('Content-Type: text/html; charset=UTF-8');
+
+// Inclure manuellement les fichiers nécessaires
+require __DIR__ . '/phpmailer/PHPMailer.php';
+require __DIR__ . '/phpmailer/SMTP.php';
+require __DIR__ . '/phpmailer/Exception.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-header('Content-Type: application/json');
+$config = require __DIR__ . '/phpmailer/config.mail.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = htmlspecialchars(trim($_POST['name'] ?? ''));
+    $name = trim(htmlspecialchars(trim($_POST['name'] ?? '')));
     $email = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL);
     $message = htmlspecialchars(trim($_POST['message'] ?? ''));
 
@@ -27,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Password = $config['password'];
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
+        $mail->CharSet = 'UTF-8';
 
         $mail->setFrom($config['username'], $config['name']);
         $mail->addAddress($config['username']);

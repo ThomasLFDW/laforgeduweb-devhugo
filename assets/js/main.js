@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const counters = document.querySelectorAll('.stat-number');
 
@@ -22,9 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     counters.forEach(animateCount);
-});
 
-document.addEventListener("DOMContentLoaded", function () {
     // Ajout des bullets carousel
     const glideTrack = document.querySelectorAll('.glide');
     glideTrack.forEach(track => {
