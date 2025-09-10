@@ -1,19 +1,24 @@
 <footer class="site-footer">
-  <div class="container">
-    <p>&copy; {{ now.Year }} L'Éco Forge du Web — Tous droits réservés.</p>
-    <div class="footer-socials">
-      <a href="https://www.facebook.com/lecoforgeduweb" target="_blank" aria-label="Facebook">
-          {{ partial "icons/facebook-svg.html" . }}
-      </a>
-      <a href="https://www.instagram.com/leco_forgeduweb/" target="_blank" aria-label="Instagram">
-          {{ partial "icons/instagram-svg.html" . }}
-      </a>
-      <a href="https://www.linkedin.com/in/thomas-dufoss%C3%A9-michelangeli" target="_blank" aria-label="LinkedIn">
-          {{ partial "icons/linkedin-svg.html" . }}
-      </a>
-        <a href="https://github.com/ThomasLFDW" target="_blank" aria-label="Github">
-            {{ partial "icons/github-svg.html" . }}
-        </a>
+    <div class="container">
+        <div class="footer__first-row">
+            <p>&copy; {{ now.Year }} L'Éco Forge du Web — Tous droits réservés. <br>
+                <span><a href="https://www.infomaniak.com/fr/ecologie" target="_blank" aria-label="Facebook">Hébergement durable</a> - <strong>0.05g de CO2</strong> produit à chaque visite.
+                    Parmi les 10% de sites les plus verts au monde.</span></p>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/lecoforgeduweb" target="_blank" aria-label="Facebook">
+                    {{ partial "icons/facebook-svg.html" . }}
+                </a>
+                <a href="https://www.instagram.com/leco_forgeduweb/" target="_blank" aria-label="Instagram">
+                    {{ partial "icons/instagram-svg.html" . }}
+                </a>
+                <a href="https://www.linkedin.com/in/thomas-dufoss%C3%A9-michelangeli" target="_blank"
+                   aria-label="LinkedIn">
+                    {{ partial "icons/linkedin-svg.html" . }}
+                </a>
+                <a href="https://github.com/ThomasLFDW" target="_blank" aria-label="Github">
+                    {{ partial "icons/github-svg.html" . }}
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
 </footer>

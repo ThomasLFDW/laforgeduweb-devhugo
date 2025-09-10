@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .text-center {
   text-align: center;
 }
@@ -8,4 +10,10 @@
 
 .hidden {
   display: none !important;
+}
+
+.green-project {
+  img {
+    border: 5px solid $color-g-light;
+  }
 }

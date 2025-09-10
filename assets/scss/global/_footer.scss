@@ -1,20 +1,43 @@
 @use "../variables" as *;
+@use "../mixins" as m;
 
 .site-footer {
   background: $color-g-dark;
   color: $color-light;
-
   text-align: center;
 
-  .container {
+  .footer__first-row {
     display: flex;
     justify-content: space-between;
-  }
+    flex-direction: column;
+    padding-bottom: 10px;
 
-  p {
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    color: $color-light;
+    @include m.respond(tablet) {
+      flex-direction: row;
+      align-items: center;
+
+      p {
+        text-align: left;
+      }
+    }
+
+    p {
+      align-items: center;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: $color-light;
+
+      span {
+        color: $color-g-light;
+        font-style: italic;
+        font-size: 0.8rem;
+
+        a {
+          color: $color-g-light;
+          tdecoration: underline;
+        }
+      }
+    }
   }
 
   .footer-socials {

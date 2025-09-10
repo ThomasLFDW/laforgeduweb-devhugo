@@ -1,8 +1,12 @@
+<!-- Viewport & Language -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 {{ with resources.Get "scss/init.scss" }}
-{{ $opts := dict "outputStyle" "compressed" "transpiler" "dartsass" }}
-{{ with . | toCSS $opts }}
-<style>{{ .Content | safeCSS }}</style>
-{{ end }}
+    {{ $opts := dict "outputStyle" "compressed" "transpiler" "dartsass" }}
+    {{ with . | toCSS $opts }}
+        <style>{{ .Content | safeCSS }}</style>
+    {{ end }}
 {{ end }}
 
 <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
@@ -39,34 +43,34 @@
 {{/*
 <meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-cover.jpg">*/}}
 
-<!-- Viewport & Language -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 {{ if site.Params.glide.glideCss }}
-<link rel="preload" href="{{ site.Params.glide.glideCss }}" as="style" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-<link rel="stylesheet" href="{{ site.Params.glide.glideCss }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    <link rel="preload" href="{{ site.Params.glide.glideCss }}" as="style" integrity="{{ .Data.Integrity }}"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ site.Params.glide.glideCss }}" integrity="{{ .Data.Integrity }}"
+          crossorigin="anonymous">
 {{ end }}
 
 {{ with resources.Get "scss/main.scss" }}
-{{ $opts := dict
-"enableSourceMap" (not hugo.IsProduction)
-"sourceMapIncludeSources" (not hugo.IsProduction)
-"outputStyle" (cond hugo.IsProduction "compressed" "expanded")
-"targetPath" "css/main.css"
-"transpiler" "dartsass"
-}}
-{{ with . | toCSS $opts }}
-{{ if hugo.IsProduction }}
-{{ with . | fingerprint }}
-<link rel="preload" href="{{ .RelPermalink }}" as="style" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-{{ end }}
-{{ else }}
-<link rel="preload" href="{{ .RelPermalink }}" as="style">
-<link rel="stylesheet" href="{{ .RelPermalink }}">
-{{ end }}
-{{ end }}
+    {{ $opts := dict
+            "enableSourceMap" (not hugo.IsProduction)
+            "sourceMapIncludeSources" (not hugo.IsProduction)
+            "outputStyle" (cond hugo.IsProduction "compressed" "expanded")
+            "targetPath" "css/main.css"
+            "transpiler" "dartsass"
+    }}
+    {{ with . | toCSS $opts }}
+        {{ if hugo.IsProduction }}
+            {{ with . | fingerprint }}
+                <link rel="preload" href="{{ .RelPermalink }}" as="style" integrity="{{ .Data.Integrity }}"
+                      crossorigin="anonymous">
+                <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"
+                      crossorigin="anonymous">
+            {{ end }}
+        {{ else }}
+            <link rel="preload" href="{{ .RelPermalink }}" as="style">
+            <link rel="stylesheet" href="{{ .RelPermalink }}">
+        {{ end }}
+    {{ end }}
 {{ end }}
 
 <script defer type="application/ld+json">
@@ -88,8 +92,8 @@
 <!-- Remplacez votre script Plausible actuel par : -->
 <script>
     // Charge Plausible après que la page soit stable
-    window.addEventListener('load', function() {
-        setTimeout(function() {
+    window.addEventListener('load', function () {
+        setTimeout(function () {
             const script = document.createElement('script');
             script.defer = true;
             script.src = 'https://plausible.io/js/script.hash.tagged-events.js';
