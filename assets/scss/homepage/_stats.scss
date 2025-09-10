@@ -24,6 +24,14 @@
       font-weight: bold;
       color: $color-light;
       line-height: 1;
+      text-shadow: -2px -2px 0 $color-g-dark,
+      2px -2px 0 $color-g-dark,
+      -2px 2px 0 $color-g-dark,
+      2px 2px 0 $color-g-dark,
+      -3px 0px 0 $color-g-dark,
+      3px 0px 0 $color-g-dark,
+      0px -3px 0 $color-g-dark,
+      0px 3px 0 $color-g-dark;
     }
 
     .label {
@@ -34,8 +42,8 @@
 
     .desc {
       font-size: 0.85rem;
-      opacity: 0.8;
       margin-top: 0.3rem;
+      font-weight: 500;
     }
   }
 }

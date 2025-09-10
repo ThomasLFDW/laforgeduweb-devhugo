@@ -1,0 +1,42 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  background-color: #fafafa;
+  color: #133c0b;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: system-ui, sans-serif;
+  color: #133c0b;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+section:first-of-type {
+  padding-bottom: 4rem;
+}
+
+section:last-of-type {
+  padding-bottom: 4rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

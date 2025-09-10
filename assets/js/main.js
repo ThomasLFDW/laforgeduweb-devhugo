@@ -1,7 +1,4 @@
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener('load', function() {
     const counters = document.querySelectorAll('.stat-number');
 
     const animateCount = (el) => {
@@ -31,13 +28,24 @@ document.addEventListener("DOMContentLoaded", function () {
     glideTrack.forEach(track => {
         const slides = track.querySelectorAll('.glide__slide:not(.glide__slide--clone)');
         const bulletsContainer = track.querySelector('.glide__bullets');
-
         slides.forEach((slide, index) => {
             const bullet = document.createElement('button');
             bullet.className = 'glide__bullet';
             bullet.setAttribute('data-glide-dir', `=${index}`);
             if (bulletsContainer) {
                 bulletsContainer.appendChild(bullet);
+            }
+        });
+
+        const bullets = document.querySelectorAll('.glide__bullet');
+        bullets.forEach((bullet, index) => {
+            bullet.setAttribute('aria-label', `Aller à la slide ${index + 1}`);
+            bullet.setAttribute('type', 'button');
+            bullet.setAttribute('role', 'tab');
+
+            // Texte pour lecteurs d'écran
+            if (!bullet.querySelector('.sr-only')) {
+                bullet.innerHTML = `<span class="sr-only">Slide ${index + 1}</span>`;
             }
         });
     })
@@ -66,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Initialisation du carousel Glide.js pour les réalisations
-    new Glide('.glide-realisations', {
+    const carouselRealisation = new Glide('.glide-realisations', {
         type: 'carousel',
         startAt: 0,
         perView: 3,
@@ -79,7 +87,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 perView: 1
             }
         }
-    }).mount();
+    });
+
+    // Préchargement des images suivantes lors du changement de slide
+    carouselRealisation.on('run', function () {
+        const currentIndex = carouselRealisation.index;
+        const slides = document.querySelectorAll('.glide__slide img[loading="lazy"]');
+
+        // Précharge les 2 prochaines images
+        for (let i = 0; i < 2; i++) {
+            const nextIndex = (currentIndex + i + 1) % slides.length;
+            if (slides[nextIndex] && slides[nextIndex].loading === 'lazy') {
+                slides[nextIndex].loading = 'eager';
+            }
+        }
+    });
+
+    setTimeout(function () {
+        if (document.querySelector('.glide-realisations')) {
+            carouselRealisation.mount();
+        }
+    }, 100); // Petit délai pour éviter les reflows
+
 
     var elem = document.querySelector('.testimonials-grid');
     new Masonry(elem, {

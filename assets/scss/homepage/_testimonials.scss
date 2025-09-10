@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../mixins" as m;
 
 .testimonials-masonry {
   padding: 3rem 0 0;
@@ -50,8 +51,12 @@
     text-align: left;
     text-decoration: none;
     color: $color-g-dark;
-    width: 350px;
+    width: 250px;
     gap: 0 1rem;
+
+    @include m.respond(tablet) {
+      width: 350px;
+    }
 
     &:hover {
       transform: scale(1.05);

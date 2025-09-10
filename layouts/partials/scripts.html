@@ -1,17 +1,17 @@
-{{ if site.Params.glideJS }}
-    <script src="{{ site.Params.glideJS }}" crossorigin="anonymous" defer></script>
+{{ if site.Params.glide.glideJs }}
+    <script src="{{ site.Params.glide.glideJs }}" crossorigin="anonymous" defer></script>
 {{ end }}
-{{ if site.Params.masonry }}
-    <script src="{{ site.Params.masonry }}" crossorigin="anonymous" defer></script>
+{{ if site.Params.params.masonryJs }}
+    <script src="{{ site.Params.params.masonryJs }}" crossorigin="anonymous" defer></script>
 {{ end }}
 
 
 
 {{ $script := resources.Get "js/main.js" }}
 {{ $opts := dict
-"minify" hugo.IsProduction
-"sourceMap" (cond hugo.IsProduction "" "external")
-"targetPath" "js/main.js"
+        "minify" hugo.IsProduction
+        "sourceMap" (cond hugo.IsProduction "" "external")
+        "targetPath" "js/main.js"
 }}
 {{ $built := $script | js.Build $opts }}
 {{ if hugo.IsProduction }}
