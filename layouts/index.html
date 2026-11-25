@@ -1,580 +1,411 @@
 {{ define "main" }}
-<section class="hero">
-    <div class="overlay"></div>
-    <div class="container">
-        <h1>Création de sites internet éco-responsables
-            <br/>&amp Optimisation SEO durable
-        </h1>
-        <h2>Boostez votre visibilité grâce à un référencement éthique</h2>
-        <p>Un site web professionnels, écologique et performant en plus d'être optimisé pour Google !<br>
-            Vitesse, design, référencement naturel : tout est pensé pour votre succès en ligne.<br>
-            Et le plus ? Vous faites un grand pas pour un numérique responsable ! 🌱</p>
-        <a href="https://calendar.app.google/GTLWHEFwgLLn2AQu5" class="btn" target="_blank">
-            Obtenez un site écologique et performant dès maintenant ☀️
-        </a>
+{{ $rdv := "https://calendar.app.google/GTLWHEFwgLLn2AQu5" }}
+
+<section id="top" class="hero">
+    <div class="container hero__grid">
+        <div class="hero__text">
+            <p class="pill"><span class="pill__dot" aria-hidden="true"></span>Développeur fullstack freelance · Orchestrateur IA · Web sobre</p>
+            <h1>Du code sobre, des produits qui durent.</h1>
+            <p class="hero__lead">Je conçois des sites, des applications web et des outils métier pour les agences, les startups, les PME et les structures engagées. Avec une équipe d'agents IA que je pilote : revue de code, tests et documentation à chaque livraison.</p>
+            <div class="actions">
+                <a class="btn btn--primary" href="{{ $rdv }}" target="_blank" rel="noopener">Réserver un appel de 15 min {{ partial "icon.html" "arrow" }}</a>
+                <a class="btn btn--secondary" href="#realisations">Voir les réalisations</a>
+            </div>
+            <p class="hero__proof"><span>À mon compte depuis 2018</span><span aria-hidden="true">·</span><span>+20 clients accompagnés</span><span aria-hidden="true">·</span><span>100 % d'avis positifs sur LinkedIn</span></p>
+        </div>
+
+        <figure class="measure">
+            <div class="measure__head">
+                <div>
+                    <p class="label label--on-dark">Relevé d'éco-conception</p>
+                    <p class="measure__name">Saint-Sauveur Boulangerie</p>
+                </div>
+                <span class="measure__year">2025</span>
+            </div>
+            <div class="measure__score">
+                <span class="measure__big">100</span>
+                <span class="measure__unit">/100 · Google PageSpeed</span>
+            </div>
+            <div class="measure__tiles">
+                <div><p class="measure__value">0,219 g</p><p>de CO₂ par visite</p></div>
+                <div><p class="measure__value">−90 %</p><p>d'émissions par rapport à un CMS</p></div>
+            </div>
+            <div>
+                <div class="measure__bar-legend"><span>Plus vert que 86 % des sites mesurés</span><span class="mono">top 14 %</span></div>
+                <div class="measure__bar" role="img" aria-label="86 %"><span style="width: 86%"></span></div>
+            </div>
+            <figcaption>Premier site éco-conçu de L'Éco Forge du Web.</figcaption>
+        </figure>
     </div>
 </section>
 
-<section class="logos-carousel">
-    <div class="carousel-track">
-        <img src="/images/customer_logos/artrade.webp" alt="Artrade Logo"/>
-        <img src="/images/customer_logos/balneaire.webp" alt="La Balnéaire Logo"/>
-        <img src="/images/customer_logos/corsica.webp" alt="Corsica Logo"/>
-        <img src="/images/customer_logos/cyd.webp" alt="Conquer Your Day Logo"/>
-        <img src="/images/customer_logos/DG.webp" alt="Delphine Guiblain Logo"/>
-        <img src="/images/customer_logos/fyd.webp" alt="Follow Your Dreams Logo"/>
-        <img src="/images/customer_logos/ibis.webp" alt="Ibis Budget Logo"/>
-        <img src="/images/customer_logos/lppdj.webp" alt="Les Petits Plats du Jour Logo"/>
-        <img src="/images/customer_logos/oiseaux.webp" alt="Oiseaux Rares Logo"/>
-        <img src="/images/customer_logos/pompier.webp" alt="Pompier13 Logo"/>
-        <img src="/images/customer_logos/smile.webp" alt="Smile Logo"/>
-
-        <!-- doublé pour l’effet boucle infinie -->
-        <img src="/images/customer_logos/artrade.webp" alt="Artrade Logo"/>
-        <img src="/images/customer_logos/balneaire.webp" alt="La Balnéaire Logo"/>
-        <img src="/images/customer_logos/corsica.webp" alt="Corsica Logo"/>
-        <img src="/images/customer_logos/cyd.webp" alt="Conquer Your Day Logo"/>
-        <img src="/images/customer_logos/DG.webp" alt="Delphine Guiblain Logo"/>
-        <img src="/images/customer_logos/fyd.webp" alt="Follow Your Dreams Logo"/>
-        <img src="/images/customer_logos/ibis.webp" alt="Ibis Budget Logo"/>
-        <img src="/images/customer_logos/lppdj.webp" alt="Les Petits Plats du Jour Logo"/>
-        <img src="/images/customer_logos/oiseaux.webp" alt="Oiseaux Rares Logo"/>
-        <img src="/images/customer_logos/pompier.webp" alt="Pompier13 Logo"/>
-        <img src="/images/customer_logos/smile.webp" alt="Smile Logo"/>
-
-    </div>
-</section>
-
-<section class="who-section">
-    <div class="container">
-        <div class="services-grid">
-            <div class="services-media">
-                <img src="/images/thomas.webp" alt="Thomas, créateur de L'Éco Forge du Web" loading="lazy">
-                <!-- Tu pourras remplacer par une balise <video> plus tard -->
-            </div>
-
-            <div class="services-content">
-                <h2>Qui est derrière "L'Éco Forge du Web ?"</h2>
-                <p>
-                    C'est Thomas aux commandes ! Et depuis plus de 7 ans, j’accompagne les <b>entrepreneurs</b>, les
-                    <b>PME</b> et les <b>artisans</b> dans la création de leur <b>site internet éco-responsable</b>
-                    et l’<b>optimisation SEO</b>.
-                    Mon objectif : développer votre <b>visibilité sur Google</b> et attirer plus de clients avec un
-                    site
-                    rapide, performant, bien référencé et éthique.
-                </p>
-                <p class="highlight">
-                    Je conçois des sites web sur-mesure, à faible consommation carbone, pensés pour :
-                </p>
-                <ul class="service-benefits">
-                    <li>Attirer vos clients avec un design professionnel et impactant 🎯</li>
-                    <li>Améliorer votre référencement naturel pour être bien positionné sur Google 🔎</li>
-                    <li>Optimiser les performances (vitesse, sécurité, UX) pour maximiser vos conversions ⚡️</li>
-                    <li>Protéger la planète en réduisant l'impact du numérique sur nos consommations 🌱</li>
-                </ul>
-                <p>
-                    Que vous soyez <b>indépendant</b>, <b>artisan</b>, <b>coach</b>, <b>consultant</b> ou <b>dirigeant
-                    d’une PME</b>, je vous aide à créer un site web qui reflète votre expertise et vous permet de
-                    développer votre activité tout en préservant notre environnement 🌳
-                </p>
-            </div>
+<section class="clients" aria-label="Clients">
+    <p class="container label">Ils m'ont fait confiance</p>
+    <div class="clients__viewport">
+        <div class="clients__track">
+            {{ range site.Data.clients }}<img src="{{ .src }}" alt="{{ .name }}" style="height: {{ .height }}px" loading="lazy">{{ end }}
+            {{ range site.Data.clients }}<img src="{{ .src }}" alt="" aria-hidden="true" style="height: {{ .height }}px" loading="lazy">{{ end }}
         </div>
     </div>
 </section>
 
-<section class="services-section" id="services">
-    <div class="container text-center">
-        <h2>Création de site web écologique & référencement éthique : <br/>un duo gagnant pour votre succès et pour
-            la planète</h2>
-        <div class="services-grid">
-            <div class="service-item">
-                <img decoding="async" width="100" height="100"
-                     src="/images/icons/Creation_de_site_internet_professionnel-optimise_SEO.svg"
-                     alt="Création de site internet professionnel & optimisé SEO">
-                <h3>Création d'éco-site internet professionnel & optimisé SEO</h3>
-                <p class="bold">Un site web performant pour booster votre activité</p>
-                <p>Vous êtes entrepreneur, artisan ou dirigeant de PME ? Offrez à votre entreprise un <b>site
-                    internet professionnel</b> conçu pour être <b>rapide</b>, <b>sécurisé</b> et <b>parfaitement
-                    optimisé pour Google</b>.</p>
-                <ul>
-                    <li><b>Création de site vitrine ou e-commerce</b></li>
-                    <li><b>Design sur-mesure</b>, responsive et adapté à votre image</li>
-                    <li><b>Optimisation SEO incluse</b> : structure, balises, contenu stratégique</li>
-                    <li><b>Sécurisation</b> pour un site fiable et protégé</li>
-                    <li><b>Vitesse, performance et éthique</b> pour un "green" site rapide & optimisé pour le mobile
-                    </li>
-                </ul>
-                <p class="bold">👉 Gagnez en visibilité et attirez plus de clients grâce à un éco-site internet
-                    efficace
-                    et bien référencé.</p>
+<section class="section">
+    <div class="container stack-xl">
+        <header class="section__head">
+            <p class="label label--accent">Vous vous reconnaissez ?</p>
+            <h2>Le projet avance moins vite que prévu.</h2>
+        </header>
+        <div class="grid grid--3">
+            {{ range slice
+                (dict "icon" "building" "who" "Agence" "text" "Vous avez signé plus de projets que vous n'avez de développeurs disponibles.")
+                (dict "icon" "rocket" "who" "Startup" "text" "Votre MVP doit sortir, et votre CTO n'est pas encore recruté.")
+                (dict "icon" "code" "who" "Reprise de projet" "text" "Vous avez hérité d'un projet que personne ne veut reprendre.")
+                (dict "icon" "gauge" "who" "PME et TPE" "text" "Votre site est lent, lourd, et Google vous le fait payer.")
+                (dict "icon" "users" "who" "ESN" "text" "Votre client attend un développeur senior, disponible tout de suite et à distance.")
+                (dict "icon" "sprout" "who" "Structure engagée" "text" "Votre structure est engagée, votre site devrait l'être aussi.")
+            }}
+            <div class="card pain">
+                <span class="pain__who"><span class="icon-chip icon-chip--small">{{ partial "icon.html" .icon }}</span>{{ .who }}</span>
+                <p>{{ .text }}</p>
             </div>
-            <div class="service-item">
-                <img decoding="async" width="100" height="100"
-                     src="/images/icons/Refonte-Optimisation_de_site_web.svg"
-                     alt="Refonte & Optimisation de site web">
-                <h3>Refonte & Optimisation de sites web</h3>
-                <p class="bold">Modernisez votre site, améliorez votre visibilité sur Google et devenez éthique</p>
-                <p>Votre site est obsolète, lourd ou mal référencé ? Profitez d’une <b>refonte complète</b> et d’une
-                    <b>optimisation SEO avancée</b> pour améliorer votre présence en ligne en plus de profiter d'un
-                    allègement sur les serveurs.</p>
-                <ul>
-                    <li><b>Refonte graphique et technique</b> pour un site moderne et performant</li>
-                    <li><b>Optimisation SEO complète</b> : audit, structure, vitesse, SEO local & e-commerce</li>
-                    <li><b>Amélioration de l’expérience utilisateur</b> pour plus de conversions</li>
-                    <li><b>Sécurisation</b> pour un site fiable et protégé</li>
-                    <li><b>Optimisation de la vitesse</b> (Core Web Vitals, temps de chargement, cache, CDN)</li>
-                </ul>
-                <p class="bold">👉 Transformez votre site en un véritable atout commercial et gagnez en visibilité
-                    sur Google.</p>
-            </div>
-            <div class="service-item">
-                <img decoding="async" width="100" height="100"
-                     src="/images/icons/Accompagnement_digital_personnalise.svg"
-                     alt="Accompagnement digital personnalisé">
-                <h3>Accompagnement digital personnalisé</h3>
-                <p class="bold">Une stratégie digitale sur-mesure pour développer votre business en ligne</p>
-                <p>Vous avez un site internet mais vous ne savez pas comment l’optimiser pour générer plus de trafic
-                    et de clients ? Avec mon <b>accompagnement digital personnalisé</b>, bénéficiez d’une <b>stratégie
-                        sur-mesure adaptée à votre activit</b>.</p>
-                <ul>
-                    <li><b>Audit de votre présence en ligne</b> : site web, SEO, visibilité digitale</li>
-                    <li><b>Optimisation SEO et stratégie de référencement</b></li>
-                    <li><b>Stratégie de conversion</b> : amélioration UX, tunnels de vente, génération de leads</li>
-                    <li><b>Conseils en marketing digital</b> : réseaux sociaux, publicité en ligne, email marketing
-                    </li>
-                    <li><b>Accompagnement continu</b> pour suivre votre évolution et ajuster les actions</li>
-                </ul>
-                <p class="bold">👉 Passez à l’étape supérieure et faites de votre présence digitale un levier de
-                    croissance !</p>
-            </div>
-        </div>
-        <a href="https://calendar.app.google/GTLWHEFwgLLn2AQu5" class="btn --light" target="_blank">📞 On en discute
-            ?</a>
-    </div>
-</section>
-
-<section class="stats-section">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number" data-target="20" data-prefix="+">0</div>
-                <p class="label">clients accompagnés</p>
-                <p class="desc">Des entrepreneurs, artisans et PME qui ont boosté leur présence en ligne.</p>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="50" data-prefix="+">0</div>
-                <p class="label">pages web optimisées</p>
-                <p class="desc">Sites plus visibles, plus rapides et mieux référencés sur Google.</p>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="8" data-prefix="+">0</div>
-                <p class="label">ans d’expérience</p>
-                <p class="desc">Expertise en création de site internet et SEO.</p>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="98" data-prefix="+">0</div>
-                <p class="label">sur Google PageSpeed</p>
-                <p class="desc">Performance et rapidité garanties.</p>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" data-target="100" data-suffix="%">0</div>
-                <p class="label">de satisfaction client</p>
-                <p class="desc">Basé sur les avis vérifiés LinkedIn.</p>
-            </div>
+            {{ end }}
         </div>
     </div>
 </section>
 
-<section class="realisations-carousel" id="portfolio">
-    <div class="container">
-        <h2>Mes réalisations</h2>
-        <p>Sites internet professionnels optimisés pour la <b>performance</b>, le <b>SEO</b> et
-            l'<b>éco-responsabilité</b>
-            dans le numérique.</p>
-        <div class="glide glide-realisations" data-name="realisations">
-            <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                    <li class="glide__slide green-project">
-                        <img src="/images/portfolio/saintsauveurboulangerie.webp" alt="Saint-Sauveur Boulangerie"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Saint-Sauveur Boulangerie - 2025</h3>
-                        <p>🌱 Conception du premier site éco-responsable 🌱<br><i>-90% d'émission de CO2 vs CMS |
-                            100/100 Google PageSpeed | 0.219g CO2 par visite = Parmi les 14% de sites les plus verts au monde.</i></p>
-                    </li>
-                    <li class="glide__slide green-project">
-                        <img src="/images/portfolio/lesarnauds.webp" alt="Les Arnauds Bed And Breakfast"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Les Arnauds Bed And Breakfast - 2025</h3>
-                        <p>🌱 Refonte du site en version écologique 🌱<br><i>100/100 Google PageSpeed | 0.219g CO2 par visite = Parmi les 25% de sites les plus verts au monde.</i></p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/mercure.webp" alt="Mercure Hotel" loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Mercure Hotel</h3>
-                        <p>Réalisation des sites Hotel & Restaurant sous WordPress.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/pompiers13.webp" alt="Pompiers13" loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Pompiers 13</h3>
-                        <p>Pilotage de projet / Reprise de développement d’un site vitrine (WordPress avec Elementor
-                            et WPBakery)</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/artrade.webp" alt="Artrade" loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Artrade</h3>
-                        <p>Création d’une plateforme ICO sous Laravel & automatisation des transactions crypto.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/lppdj.webp" alt="Les Petits Plats du Jour"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Les Petits Plats du Jour</h3>
-                        <p>Vente / Pilotage de projet et des tests / Maintenance / évolution / Audit technique
-                            (WordPress e-commerce)</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/labalneaire.webp" alt="La Balnéaire" loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">La Balnéaire</h3>
-                        <p> Réalisation de la charte graphique et du site web sous WordPress.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/aureliaedition.webp" alt="Aurelia Edition" loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Aurelia Edition</h3>
-                        <p>Réalisation de la charte graphique et du site web sous WordPress.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/conqueryourday.webp" alt="Conquer Your Day" loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Conquer Your Day</h3>
-                        <p>Création d’équipe dev, intégration HTML/SCSS, solution multilingue & API Strava sous
-                            WordPress.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/corsicafr.webp" alt="Corsica.fr" loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Corsica.fr</h3>
-                        <p>Vente, pilotage, maintenance, RGPD & intégration d’un channel manager.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/fydbc.webp" alt="Follow Your Dreams By C." loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Follow Your Dreams By C.</h3>
-                        <p>Création de site web & tunnel de vente, stratégie d’acquisition (SEO, réseaux sociaux) et
-                            automatisation avec no-code.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/my-wooding.webp" alt="My Wooding" loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">My Wooding</h3>
-                        <p>Vente / Pilotage de projet / Développement d’un site marketplace (WordPress
-                            e-commerce)</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/standardfilm.webp" alt="Standard Film" loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Standard Film</h3>
-                        <p>Vente / Pilotage de projet et des tests / Reprise de création du site (WordPress)</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/wdib.webp" alt="We Do It Better" loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">We Do It Better</h3>
-                        <p>Refonte complète en HTML/CSS & Full JS avec API Drupal pour leur client Lefebvre
-                            Dalloz.</p>
-                    </li>
-                    <li class="glide__slide">
-                        <img src="/images/portfolio/kaporal.webp" alt="Kaporal" loading="lazy"
-                             width="320"
-                             height="190"/>
-                        <h3 class="project">Kaporal</h3>
-                        <p> Optimiser et maintenir un site e-commerce performant, sécurisé et fluide pour les
-                            utilisateurs.</p>
-                    </li>
+<section id="services" class="section section--alt">
+    <div class="container stack-xl">
+        <header class="section__head section__head--split">
+            <div>
+                <p class="label label--accent">Services</p>
+                <h2>Quatre façons de vous aider à livrer.</h2>
+            </div>
+            <p class="muted">Un seul interlocuteur, de la base de données à l'interface, avec un code documenté que vos équipes peuvent reprendre.</p>
+        </header>
+        <div class="grid grid--2">
+            {{ range slice
+                (dict "icon" "leaf" "title" "Sites web éco-conçus" "text" "Sites vitrines, refontes et boutiques en ligne : des pages légères, rapides et bien référencées, qui consomment moins à chaque visite." "tags" (slice "Astro" "Hugo" "WordPress" "Refonte SEO"))
+                (dict "icon" "app" "title" "Applications web et SaaS" "text" "Un produit web ou un SaaS de A à Z, un outil métier qui vous rend du temps chaque semaine. Je reprends aussi les projets existants, en JavaScript comme en PHP." "tags" (slice "Next.js" "TypeScript" "PostgreSQL" "Stripe" "PHP et Laravel"))
+                (dict "icon" "bot" "title" "Agents IA et automatisation" "text" "Des agents qui relisent le code, rédigent la documentation, trient les mails et préparent les devis. Et un accompagnement pour mettre l'IA au travail dans votre équipe technique, avec une méthode et des garde-fous." "tags" (slice "Revue de code" "Documentation" "Mails et devis" "Accompagnement d'équipe"))
+                (dict "icon" "users" "title" "Renfort d'équipe et CTO" "text" "Renfort d'agence en marque blanche, régie à distance pour les ESN, ou CTO à temps partagé pour structurer une startup." "tags" (slice "Marque blanche" "Régie à distance" "CTO à temps partagé"))
+            }}
+            <article class="card card--lg service">
+                <span class="icon-chip">{{ partial "icon.html" .icon }}</span>
+                <h3>{{ .title }}</h3>
+                <p>{{ .text }}</p>
+                <ul class="tags">{{ range .tags }}<li class="tag">{{ . }}</li>{{ end }}</ul>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section id="equipe-ia" class="section">
+    <div class="container grid grid--2 grid--start">
+        <div class="stack-l">
+            <p class="label label--accent">Comment je travaille</p>
+            <h2>Une équipe d'agents IA, un seul responsable.</h2>
+            <p>Depuis 2026, je ne code plus seul. Je pilote une équipe d'agents IA spécialisés, chacun avec son brief, ses règles et ses garde-fous. Moi, je cadre, j'arbitre, je relis, et je réponds du résultat.</p>
+            <div class="multiplier">
+                <span class="multiplier__value">2 à 3×</span>
+                <span>plus de travail livré par jour actif, mesuré sur mes propres commits Git. Et un niveau de finition que je ne m'offrais pas à la main.</span>
+            </div>
+            <div class="stack-s">
+                <p class="label">À chaque livraison, vous recevez</p>
+                <ul class="tags">
+                    <li class="tag tag--tint">Une documentation à jour</li>
+                    <li class="tag tag--tint">Une revue de code</li>
+                    <li class="tag tag--tint">Un audit de sécurité</li>
+                    <li class="tag tag--tint">Un journal de bord partagé</li>
+                    <li class="tag tag--tint">Un point d'avancement sans jargon</li>
                 </ul>
             </div>
-
-            <!-- Bullets -->
-            <div class="glide__bullets" data-glide-el="controls[nav]">
-                <!-- Autofill by main.js -->
+        </div>
+        <div class="roster">
+            <div class="roster__head">
+                <p>L'équipe sur votre projet</p>
+                <span class="mono">7 agents · 1 humain</span>
             </div>
-
-            <!-- Arrows -->
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
-            </div>
+            <ul>
+                <li class="roster__lead"><strong>Thomas</strong><span class="mono">responsable</span><span>Cadre et arbitre : le brief, les règles et les priorités de chaque agent.</span></li>
+                {{ range slice
+                    (slice "Développeur fullstack" "code" "Écrit le code, de la base de données à l'interface.")
+                    (slice "Relecteur de code" "revue" "Relit chaque modification et traque la complexité inutile.")
+                    (slice "Red team" "attaque" "Son seul travail : casser ce qui vient d'être livré.")
+                    (slice "Auditeur sécurité" "sécurité" "Vérifie les accès, les données et les failles connues.")
+                    (slice "Auditeur SEO" "référencement" "Contrôle le référencement technique de chaque page.")
+                    (slice "Copywriter" "textes" "Écrit les textes qui expliquent et qui convertissent.")
+                    (slice "Testeur de parcours" "tests" "Teste les parcours dans un vrai navigateur.")
+                }}
+                <li><strong>{{ index . 0 }}</strong><span class="mono">{{ index . 1 }}</span><span>{{ index . 2 }}</span></li>
+                {{ end }}
+                <li class="roster__lead"><strong>Thomas</strong><span class="mono">responsable</span><span>Relit, et répond du résultat devant vous.</span></li>
+            </ul>
         </div>
     </div>
 </section>
 
-<section class="section-cta">
-    <div class="container">
-        <h2>Envie de réduire ton impact carbone tout en conservant la performance ?</h2>
-        <a href="https://calendar.app.google/GTLWHEFwgLLn2AQu5" class="btn --light" target="_blank">
-            📞 Prenons 15 minutes pour en parler</a>
-    </div>
-</section>
-
-<section class="testimonials-masonry" id="temoignages">
-    <div class="container">
-        <h2>Ce que disent mes clients 👇</h2>
-        <div class="testimonials-scroll">
-            <div class="fade-top"></div>
-            <div class="testimonials-grid">
-                <a class="testimonial-card" href="https://www.linkedin.com/in/mathieu-naji-28a32874/"
-                   target="_blank">
-                    <img decoding="async" width="75" height="75" src="/images/testimonial/Mathieu-Naji.webp"
-                         alt="Mathieu Naji"/>
-                    <p class="author">Mathieu Naji - Responsable IT Digital chez Kaporal</p>
-                    <div class="stars" aria-label="5 étoiles sur 5">
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                    </div>
-                    <p class="message">“De part ses expériences variées, son caractère, et sa méthodologie,
-                        Thomas saura j'en suis sûr capable d'aider les entreprises qui veulent mettre un pied
-                        dans le Digital. Son profil FullStack sur différentes technologies est notamment un
-                        point fort. Nos chemins se recroiseront probablement à l'avenir et avec plaisir”</p>
-                </a>
-                <a class="testimonial-card" href="https://www.linkedin.com/in/yael-niddam-59a1051a7/"
-                   target="_blank">
-                    <img decoding="async" width="75" height="75" src="/images/testimonial/Yael-Niddam.webp"
-                         alt="Yael Niddam"/>
-                    <p class="author">Yael Niddam - Fondatrice de "Les petits plats du jour</p>
-                    <div class="stars" aria-label="5 étoiles sur 5">
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                    </div>
-                    <p class="message">“En cette période compliquée pour nous les restaurateurs, Grâce à la
-                        réactivité de « l'Éco Forge du Web » nous avons pu adapter notre activité et notre site
-                        internet en 1 semaine, pour mettre en place une continuité solidaire. Merci Thomas,
-                        toute l’année à nos côtés, et d’autant plus en ces temps troublés!”</p>
-                </a>
-                <a class="testimonial-card" href="https://www.linkedin.com/in/etienne-jan-ailleret/"
-                   target="_blank">
-                    <img decoding="async" width="75" height="75"
-                         src="/images/testimonial/Etienne-Jan-Ailleret.webp" alt="Etienne Jan-Ailleret"/>
-                    <p class="author">Etienne Jan-Ailleret - Partner | Digital Officer chez Conquer Your Day</p>
-                    <div class="stars" aria-label="5 étoiles sur 5">
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                    </div>
-                    <p class="message">“Thomas a su s'adapter à nos contraintes de temps et a respecté les
-                        consignes en fonction des maquettes qu'il avait. Très bonne communication. Nous
-                        retravaillerons avec lui !”</p>
-                </a>
-                <a class="testimonial-card" href="https://www.linkedin.com/in/elodie-castaldo/"
-                   target="_blank">
-                    <img decoding="async" width="75" height="75"
-                         src="/images/testimonial/Elodie-Castaldo.webp" alt="Elodie Castaldo" loading="lazy"/>
-                    <p class="author">Elodie Castaldo - Entrepreneuse en médiation culturelle chez La
-                        Balnéaire</p>
-                    <div class="stars" aria-label="5 étoiles sur 5">
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                    </div>
-                    <p class="message">“Très à l'écoute, professionnel et rigoureux, Thomas a été un
-                        interlocuteur parfait pour la création du site internet de mon projet artistique. Malgré
-                        des demandes spécifiques et complexes, il a su répondre à tous les critères et assurer
-                        une conception rapide et efficace du site. Son suivi et sa disponibilité avant, pendant
-                        et après la livraison du site internet est également très appréciable et m'a permis de
-                        prendre en main l'intégration de contenu textuel et d'images de manière très intuitive.
-                        Je le recommande vivement !”</p>
-                </a>
-                <a class="testimonial-card" href="https://www.linkedin.com/in/gautierlaurent/"
-                   target="_blank">
-                    <img decoding="async" width="75" height="75"
-                         src="/images/testimonial/Laurent-Gautier.webp" alt="Laurent Gautier" loading="lazy"/>
-                    <p class="author">Laurent Gautier - Chef de Projet Digital, UX Design et Ergonome chez
-                        Nextia</p>
-                    <div class="stars" aria-label="5 étoiles sur 5">
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                    </div>
-                    <p class="message">“Thomas is not only an excellent developer, but he is also a colleague
-                        with whom the job becomes very enjoyable.
-                        I had the chance to work with Thomas on various web development projects at Nextia Web
-                        Agency. He has always found an effective solution to complex issues and if a difficulty
-                        arose, he has always found a way to overcome it quickly.
-                        Always a joke around the corner, Thomas is a real asset in a Dev Team, because of his
-                        tech knowledge but also his know-how and life skills.
-                        I therefore highly recommend him and I hope to work again together.”</p>
-                </a>
-                <a class="testimonial-card" href="https://www.linkedin.com/in/laur%C3%A8ne-des-pommare-a3abb937/"
-                   target="_blank">
-                    <img decoding="async" width="75" height="75"
-                         src="/images/testimonial/Laurene-des-Pommare.webp" alt="Laurène des Pommare" loading="lazy"/>
-                    <p class="author">Laurène des Pommare - Directrice artistique Print chez Nextia</p>
-                    <div class="stars" aria-label="5 étoiles sur 5">
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                    </div>
-                    <p class="message">“J’ai eu la chance de travailler avec Thomas en agence de communication :
-                        il s’est montré non seulement très humain, à l’écoute et très sympathique, et sur le
-                        plan professionnel très sérieux, polyvalent, et d’une grande pertinence. vrai curieux et
-                        perfectionniste dans son domaine, je vous recommande de faire appel à Thomas pour tous
-                        vos projets de dev, il saura répondre à vos attentes !”</p>
-                </a>
-                <a class="testimonial-card" href="https://www.linkedin.com/in/gerard-kassapian-a41308125/"
-                   target="_blank">
-                    <img decoding="async" width="75" height="75"
-                         src="/images/testimonial/Gerard-Kassapian.webp" alt="Gerard-Kassapian.webp" loading="lazy"/>
-                    <p class=" author">Gerard Kassapian - Ingénieur Etudes et Développement chez Smile Open
-                        Source Solutions</p>
-                    <div class="stars" aria-label="5 étoiles sur 5">
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                        {{ partial "icons/star-svg.html" . }}
-                    </div>
-                    <p class="message">“Thomas est très sérieux dans son travail et cherche à bien comprendre le
-                        besoin avant de se lancer dans le code. J'ai beaucoup apprécié de travailler avec lui
-                        dans une bonne ambiance simple et efficace.”</p>
-                </a>
-                <a class="testimonial-card" href="https://www.linkedin.com/in/paul-w-0475ba210/"
-                   target="_blank">
-                    <img decoding="async" width="75" height="75"
-                         src="/images/testimonial/Paul-Weibel.webp" alt="Paul Weibel" loading="lazy"/>
-                    <p class=" author">Paul Weibel - Fondateur d'Artrade.app</p>
-                    <div class="stars" aria-label="5 étoiles sur 5">
-                        <svg viewBox="0 0 20 20" width="20" height="20" fill="currentColor"
-                             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <polygon points="10,1 12,7 18,7 13,11 15,17 10,13 5,17 7,11 2,7 8,7"/>
-                        </svg>
-                    </div>
-                    <p class="message">“Je recommande vivement les services de Thomas de La forge du Web qui est
-                        un excellent développeur, très doué et à l'écoute du client.
-                        ”</p>
-                </a>
-                <a class="testimonial-card" href="https://www.linkedin.com/in/sebastien-nouet/"
-                   target="_blank">
-                    <img decoding="async" width="75" height="75"
-                         src="/images/testimonial/Sebastien-Nouet.webp" alt="Sébastien Nouet" loading="lazy"/>
-                    <p class=" author">Sébastien Nouet - Chef de Projet chez We Do It Better</p>
-                    <p class="message">“Thomas fait partie des ces rares personnes à travailler en bonne
-                        intelligence. Il est également très professionnel et toujours à l'affût quand il s'agit
-                        d'apprendre de nouvelles compétences. C'est également une très belle rencontre humaine,
-                        Thomas est une personne très agréable ce qui nous a permis de dériver sur des sujets
-                        plus personnels. Je le recommande vivement pour vos projets !
-                        ”</p>
-                </a>
+<section id="pour-qui" class="section section--alt">
+    <div class="container stack-l">
+        <header class="section__head">
+            <p class="label label--accent">Pour qui</p>
+            <h2>Une façon de travailler adaptée à votre structure.</h2>
+        </header>
+        <div class="tabs" data-tabs>
+            <div class="tabs__list" role="tablist" aria-label="Choisir votre structure" hidden>
+                {{ range $i, $a := site.Data.pour_qui }}
+                <button type="button" role="tab" id="tab-{{ $a.id }}" aria-controls="panel-{{ $a.id }}" aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}">{{ $a.label }}</button>
+                {{ end }}
             </div>
-            <div class="fade-bottom"></div>
-        </div>
-    </div>
-</section>
-
-<section class="faq-section" id="faq">
-    <div class="container">
-        <h2>FAQ – Vos questions les plus fréquentes</h2>
-        <div class="faq-item">
-            <button class="faq-question">🌳 Pourquoi créer un site éco-responsable ?</button>
-            <div class="faq-answer">
-                <p>Un site éco-conçu consomme <b>moins de ressources serveur</b>, <b>se charge plus vite</b> et <b>améliore
-                    l’expérience utilisateur</b>. En plus de <b>réduire votre impact environnemental</b>, vous
-                    proposez à vos visiteurs un <b>site plus performant et accessible</b>.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">🌍 Comment rendez-vous les sites web plus éco-responsables ?</button>
-            <div class="faq-answer">
-                <p>J’utilise des pratiques de développement sobres : <b>code optimisé</b>, <b>hébergements verts</b>,
-                    <b>compression des médias</b>, <b>réduction des scripts inutiles</b> et <b>chargement
-                        différé</b>. Objectif : un site léger, rapide, à faible empreinte carbone.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">📈 Est-ce qu’un site éco-responsable est bon pour le SEO ?</button>
-            <div class="faq-answer">
-                <p>Oui. La légèreté et la rapidité du site améliorent les <b>Core Web Vitals</b>, un critère de
-                    classement important pour <b>Google</b>. De plus, un site bien structuré et optimisé
-                    techniquement favorise un <b>bon référencement</b>.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">🔍 Que comprend l’optimisation SEO ?</button>
-            <div class="faq-answer">
-                <p>Je travaille sur la <b>structure du site</b> (balises, hiérarchie, maillage interne), la <b>vitesse
-                    de chargement</b>, le contenu (<b>mots-clés, pertinence</b>) et les <b>performances
-                    techniques</b>.
-                    Un audit SEO est systématiquement réalisé.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">🧰 Proposez-vous un accompagnement après la mise en ligne ?</button>
-            <div class="faq-answer">
-                <p>Oui, un <b>suivi technique</b> est inclus les premiers mois. Je propose aussi un <b>accompagnement
-                    digital personnalisé</b> pour faire évoluer votre visibilité en ligne (contenu, stratégie SEO,
-                    réseaux sociaux…).</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">🎯 Quel est le délai moyen pour créer un site ?</button>
-            <div class="faq-answer">
-                <p>Tout dépend de la complexité du projet. En moyenne :</p>
-                <ul>
-                    <li>Site vitrine : 2 à 4 semaines</li>
-                    <li>Site e-commerce : 4 à 6 semaines</li>
+            {{ range site.Data.pour_qui }}
+            <div class="tabs__panel" role="tabpanel" id="panel-{{ .id }}" aria-labelledby="tab-{{ .id }}">
+                <div class="stack-m">
+                    <p class="label">{{ .label }}</p>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .text }}</p>
+                    <a class="btn btn--primary btn--medium" href="{{ $rdv }}" target="_blank" rel="noopener">En parler en 15 minutes</a>
+                </div>
+                <ul class="checklist">
+                    {{ range .points }}<li><span class="check" aria-hidden="true">{{ partial "icon.html" "check" }}</span>{{ . }}</li>{{ end }}
                 </ul>
-                <p>Une estimation précise est donnée après étude du dossier.</p>
             </div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">💬 Puis-je vous confier uniquement l’optimisation de mon site actuel ?
-            </button>
-            <div class="faq-answer">
-                <p>Oui. Si vous avez déjà un site, je peux intervenir pour une <b>refonte</b>, une <b>optimisation
-                    SEO</b> ou une <b>amélioration de la performance</b>. Un audit est réalisé en amont pour cibler
-                    les priorités.
-                </p>
-            </div>
+            {{ end }}
         </div>
     </div>
 </section>
 
-<section class="section-cta">
+<section class="section section--dark">
+    <div class="container stack-xl">
+        <header class="section__head section__head--split">
+            <div>
+                <p class="label label--leaf">Éco-conception</p>
+                <h2>Un site utile est un site léger.</h2>
+            </div>
+            <p>Moins de pages inutiles, moins de scripts, moins d'énergie gaspillée. Ces choix se font dès le départ, et ils servent aussi la vitesse et le référencement.</p>
+        </header>
+        <div class="grid grid--4">
+            <div class="card card--dark"><h3>Le juste nécessaire</h3><p>Des dépendances choisies, aucune animation superflue : chaque fonctionnalité doit servir.</p></div>
+            <div class="card card--dark"><h3>Statique quand c'est possible</h3><p>Astro ou Hugo génèrent des pages légères, rapides et simples à héberger.</p></div>
+            <div class="card card--dark"><h3>Une IA qui ne remplit pas</h3><p>L'IA consomme, elle aussi. Je l'utilise pour produire du travail vérifié, jamais pour remplir.</p></div>
+            <div class="card card--dark"><h3>Hébergement durable</h3><p>Ce site est hébergé chez Infomaniak, hébergeur engagé pour l'écologie.</p></div>
+        </div>
+        <p class="eco-line"><span class="label label--leaf">Ce site</span><span><strong>0,05 g</strong> de CO₂ par visite</span><span aria-hidden="true">·</span><span>Parmi les <strong>10 %</strong> de sites les plus verts au monde</span></p>
+    </div>
+</section>
+
+<section id="methode" class="section">
+    <div class="container stack-xl">
+        <header class="section__head">
+            <p class="label label--accent">Déroulé d'un projet</p>
+            <h2>De l'appel à la mise en ligne, en quatre étapes.</h2>
+        </header>
+        <ol class="steps">
+            <li><span class="mono">01</span><h3>Appel découverte</h3><p>15 minutes pour comprendre votre besoin et vérifier que je suis la bonne personne.</p></li>
+            <li><span class="mono">02</span><h3>Proposition</h3><p>Périmètre, planning et devis écrits. Vous savez ce que vous payez, et pour quoi.</p></li>
+            <li><span class="mono">03</span><h3>Développement</h3><p>Des livraisons régulières, relues et testées, avec un point d'avancement écrit pour être compris sans être développeur.</p></li>
+            <li><span class="mono">04</span><h3>Mise en ligne et suivi</h3><p>Mise en production, documentation, puis maintenance et évolutions si vous le souhaitez.</p></li>
+        </ol>
+    </div>
+</section>
+
+<section id="realisations" class="section section--alt">
+    <div class="container stack-xl">
+        <header class="section__head section__head--split">
+            <div>
+                <p class="label label--accent">Réalisations</p>
+                <h2>Des produits, des sites sobres, des renforts.</h2>
+            </div>
+            <p class="muted">Pour des startups, des artisans, des hôtes et des agences, en direct ou sous leur marque.</p>
+        </header>
+
+        <div class="grid grid--2">
+            {{ range slice
+                (dict "url" "framae.com" "img" "framae.webp" "alt" "Page d'accueil de Framae" "badge" "CTO et architecte IA" "date" "2025 – 2026" "title" "Framae" "text" "Produit grand public qui génère des portraits personnalisés à partir d'une date de naissance, avec un texte rédigé par LLM. Refonte du parcours d'achat, offre à la carte, conformité RGPD." "kpi" "40 → 300+" "kpiLabel" "pages publiques indexables" "stack" "Next.js · tRPC · PostgreSQL · Stripe")
+                (dict "url" "weibelchouquettes.fr" "img" "weibel-chouquettes.webp" "alt" "Page d'accueil de Weibel Chouquettes" "badge" "Outil métier" "date" "2025 – 2026" "title" "Weibel Chouquettes" "text" "Click and Collect avec paiement Square, caisse comptoir avec impression de tickets, catalogue synchronisé chaque nuit." "kpi" "Site + caisse" "kpiLabel" "un seul catalogue" "stack" "Astro · SvelteKit · Strapi · Square")
+            }}
+            <article class="card project">
+                <div class="browser">
+                    <div class="browser__bar"><span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span><a href="https://{{ .url }}" target="_blank" rel="noopener" class="mono">{{ .url }}</a></div>
+                    <img src="/images/refonte/realisations/{{ .img }}" alt="{{ .alt }}" width="960" height="600" loading="lazy">
+                </div>
+                <div class="project__body">
+                    <ul class="tags"><li class="tag tag--tint">{{ .badge }}</li><li class="tag tag--outline">{{ .date }}</li></ul>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .text }}</p>
+                    <div class="project__kpi"><strong>{{ .kpi }}</strong><span>{{ .kpiLabel }}</span><span class="mono">{{ .stack }}</span></div>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+
+        <div class="grid grid--2">
+            {{ range slice
+                (dict "url" "saintsauveurboulangerie.fr" "img" "saint-sauveur.webp" "alt" "Page d'accueil de la boulangerie Saint-Sauveur" "date" "Création · 2025" "title" "Boulangerie Saint-Sauveur" "text" "Premier site éco-conçu de L'Éco Forge du Web, pour une boulangerie d'Aix-en-Provence." "m3" "vs un CMS" "v3" "−90 %")
+                (dict "url" "lesarnauds.com" "img" "les-arnauds.webp" "alt" "Page d'accueil des Arnauds, chambres d'hôtes" "date" "Refonte · 2025" "title" "Les Arnauds, chambres d'hôtes" "text" "Refonte du site d'un mas provençal en version écologique." "m3" "Sites plus verts" "v3" "top 25 %")
+            }}
+            <article class="card project">
+                <div class="browser">
+                    <div class="browser__bar"><span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span><a href="https://{{ .url }}" target="_blank" rel="noopener" class="mono">{{ .url }}</a></div>
+                    <img src="/images/refonte/realisations/{{ .img }}" alt="{{ .alt }}" width="960" height="600" loading="lazy">
+                </div>
+                <div class="project__body">
+                    <ul class="tags"><li class="tag tag--tint">Éco-conçu</li><li class="tag tag--outline">{{ .date }}</li></ul>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .text }}</p>
+                    <dl class="metrics">
+                        <div><dt>PageSpeed</dt><dd>100/100</dd></div>
+                        <div><dt>CO₂ par visite</dt><dd>0,219 g</dd></div>
+                        <div><dt>{{ .m3 }}</dt><dd>{{ .v3 }}</dd></div>
+                    </dl>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+
+        <div class="grid grid--4">
+            {{ range slice
+                (dict "img" "/images/refonte/realisations/we-do-it-better.webp" "alt" "Site de We Do It Better" "badge" "Marque blanche" "tint" true "title" "We Do It Better" "text" "Refonte complète en HTML, CSS et JavaScript avec API Drupal, pour leur client Lefebvre Dalloz.")
+                (dict "img" "/images/refonte/realisations/artrade.webp" "alt" "Page d'accueil d'Artrade" "badge" "Plateforme" "tint" false "title" "Artrade" "text" "Plateforme ICO sous Laravel et automatisation des transactions crypto.")
+                (dict "img" "/images/portfolio/conqueryourday.webp" "alt" "Conquer Your Day" "badge" "Équipe et intégration" "tint" false "title" "Conquer Your Day" "text" "Création de l'équipe dev, site multilingue et API Strava sous WordPress.")
+                (dict "img" "/images/portfolio/lppdj.webp" "alt" "Les Petits Plats du Jour" "badge" "E-commerce" "tint" false "title" "Les Petits Plats du Jour" "text" "Pilotage, maintenance, évolutions et audit technique d'un site e-commerce WordPress.")
+            }}
+            <article class="mini-project">
+                <img src="{{ .img }}" alt="{{ .alt }}" width="640" height="400" loading="lazy">
+                <span class="tag {{ if .tint }}tag--tint{{ else }}tag--outline{{ end }}">{{ .badge }}</span>
+                <h3>{{ .title }}</h3>
+                <p>{{ .text }}</p>
+            </article>
+            {{ end }}
+        </div>
+        <p class="muted small">Et aussi : Kaporal, Mercure, Corsica.fr, Pompiers 13, My Wooding, Standard Film, La Balnéaire, Aurelia Edition.</p>
+    </div>
+</section>
+
+<section id="temoignages" class="section">
+    <div class="container stack-xl">
+        <header class="section__head section__head--split">
+            <div>
+                <p class="label label--accent">Témoignages</p>
+                <h2>Ce qu'en disent les clients et partenaires.</h2>
+            </div>
+            <a class="link-strong" href="https://www.linkedin.com/in/thomas-dufoss%C3%A9-michelangeli" target="_blank" rel="noopener">Toutes les recommandations sur LinkedIn</a>
+        </header>
+        <div class="grid grid--3">
+            {{ range site.Data.temoignages }}
+            <figure class="card quote">
+                <blockquote>« {{ .quote }} »</blockquote>
+                <figcaption>
+                    <img src="{{ .photo }}" alt="" width="48" height="48" loading="lazy">
+                    <span><strong>{{ .name }}</strong><span>{{ .role }}</span></span>
+                </figcaption>
+            </figure>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section id="tarifs" class="section section--alt">
+    <div class="container stack-xl">
+        <header class="section__head section__head--split">
+            <div>
+                <p class="label label--accent">Tarifs</p>
+                <h2>Un tarif à la journée, annoncé avant de commencer.</h2>
+            </div>
+            <p class="muted">Le devis suit l'appel découverte : nombre de jours, livrables et planning, par écrit.</p>
+        </header>
+        <div class="grid grid--3">
+            <article class="card card--lg price">
+                <h3>Développement web</h3>
+                <p class="price__amount"><strong>450 €</strong><span>par jour</span></p>
+                <p class="price__scope">Sites vitrines, refontes, sites éco-conçus, WordPress.</p>
+            </article>
+            <article class="card card--lg price">
+                <h3>Fullstack JavaScript</h3>
+                <p class="price__amount"><strong>550 €</strong><span>par jour</span></p>
+                <p class="price__scope">Applications web, SaaS, MVP, reprise de projets existants.</p>
+            </article>
+            <article class="card card--lg price price--dark">
+                <h3>Agents IA et conseil</h3>
+                <p class="price__amount"><strong>600 à 800 €</strong><span>par jour</span></p>
+                <p class="price__scope">Agents sur mesure, automatisation, accompagnement de votre équipe technique.</p>
+            </article>
+        </div>
+        <p class="muted small">TVA non applicable, article 293 B du CGI.</p>
+    </div>
+</section>
+
+<section id="a-propos" class="section">
+    <div class="container grid grid--2 grid--center">
+        <figure class="portrait">
+            <img src="/images/refonte/thomas.webp" alt="Thomas au travail, ordinateur sur les genoux" width="640" height="853" loading="lazy">
+            <figcaption class="mono">Bureau nomade · Aix-en-Provence et la route</figcaption>
+        </figure>
+        <div class="stack-l">
+            <p class="label label--accent">À propos</p>
+            <h2>Thomas, développeur fullstack et orchestrateur IA.</h2>
+            <p>Depuis 2018, je construis des sites et des outils web pour des indépendants, des TPE, des agences web et des startups, sous la bannière de L'Éco Forge du Web. Avant cela : du e-commerce Magento chez Micropole, puis WordPress et Laravel en agence.</p>
+            <p>Je travaille en nomade, depuis mon van la plupart du temps, entre Aix-en-Provence et là où la route mène. Pour vous, ça ne change rien, sinon un interlocuteur reposé et disponible.</p>
+            <dl class="figures">
+                <div><dt>clients accompagnés</dt><dd>+20</dd></div>
+                <div><dt>pages web optimisées</dt><dd>+50</dd></div>
+                <div><dt>à mon compte depuis</dt><dd>2018</dd></div>
+                <div><dt>d'avis positifs sur LinkedIn</dt><dd>100 %</dd></div>
+            </dl>
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="section section--alt">
+    <div class="container grid grid--faq">
+        <header class="stack-m">
+            <p class="label label--accent">FAQ</p>
+            <h2>Questions fréquentes.</h2>
+            <p class="muted">Une autre question ? Elle a sa place dans l'appel découverte.</p>
+        </header>
+        <div class="faq">
+            {{ range $i, $f := site.Data.faq }}
+            <details name="faq"{{ if eq $i 0 }} open{{ end }}>
+                <summary>{{ $f.q }}<span class="faq__sign" aria-hidden="true"></span></summary>
+                <p>{{ $f.a }}</p>
+            </details>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section section--alt">
     <div class="container">
-        <h2>🌿 Un site plus <b>éthique</b>, plus <b>rapide</b>, plus <b>visible</b> ?</h2>
-        <p>Créons ensemble un site web <b>éco-responsable</b>, <b>performant</b> et <b>optimisé SEO</b>, aligné avec
-            vos objectifs.
-            <br/>Chaque projet démarre par un <b>échange gratuit</b> pour comprendre vos besoins.</p>
-        <a href="https://calendar.app.google/GTLWHEFwgLLn2AQu5" class="btn --light" target="_blank">📞 Prenons 15
-            minutes pour échanger</a>
+        <div class="contact">
+            <div class="stack-l">
+                <p class="label label--leaf">Contact</p>
+                <h2>Un projet, un renfort, une question ?</h2>
+                <p>15 minutes suffisent pour savoir si nous pouvons travailler ensemble. Réservez un créneau, ou écrivez-moi.</p>
+                <a class="btn btn--leaf" href="{{ $rdv }}" target="_blank" rel="noopener">Réserver un appel de 15 min {{ partial "icon.html" "arrow" }}</a>
+                <p class="contact__mail"><span class="label label--on-dark">Par email</span><a href="mailto:contact@lecoforgeduweb.fr">contact@lecoforgeduweb.fr</a></p>
+            </div>
+            <form class="contact__form" action="/send.php" method="POST" data-contact-form>
+                <div class="contact__trap" aria-hidden="true">
+                    <label for="c-website">Ne pas remplir<input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off"></label>
+                </div>
+                <input type="hidden" name="started_at" value="">
+                <label for="c-nom">Nom<input id="c-nom" name="name" type="text" autocomplete="name" maxlength="100" required></label>
+                <label for="c-email">Email<input id="c-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+                <label for="c-structure">Structure<input id="c-structure" name="structure" type="text" autocomplete="organization" maxlength="150"></label>
+                <label for="c-besoin">Votre besoin
+                    <select id="c-besoin" name="besoin">
+                        <option>Site web</option>
+                        <option>Application web ou SaaS</option>
+                        <option>Agent IA ou automatisation</option>
+                        <option>Renfort ou CTO</option>
+                    </select>
+                </label>
+                <label for="c-message" class="contact__wide">Message<textarea id="c-message" name="message" rows="4" maxlength="5000" required></textarea></label>
+                <div class="contact__wide contact__submit">
+                    <p class="small" data-form-status role="status">Vos coordonnées servent uniquement à vous répondre.</p>
+                    <button type="submit" class="btn btn--ghost">Envoyer le message</button>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
 {{ end }}

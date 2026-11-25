@@ -1,54 +1,35 @@
-<!-- Viewport & Language -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F4F6EF">
 
-{{ with resources.Get "scss/init.scss" }}
-    {{ $opts := dict "outputStyle" "compressed" "transpiler" "dartsass" }}
-    {{ with . | toCSS $opts }}
-        <style>{{ .Content | safeCSS }}</style>
-    {{ end }}
-{{ end }}
-
-<title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
-<meta name="description"
-      content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-<meta name="robots" content="index, follow">
+{{ $title := cond (ne .Title "") (printf "%s | %s" .Title .Site.Title) .Site.Title }}
+{{ $description := .Params.description | default .Site.Params.description }}
+{{ $ogImage := "images/og-cover.jpg" | absURL }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="icon" href="/images/favicon.ico">
-<link rel="preload" href="/images/hero.webp" as="image" fetchpriority="high">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Résumé pour les assistants IA">
 
-<!-- Open Graph / Facebook -->
-{{/*
-<meta property="og:type" content="website">*/}}
-{{/*
-<meta property="og:title" content="{{ .Title }}">*/}}
-{{/*
-<meta property="og:description"
-      content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">*/}}
-{{/*
-<meta property="og:url" content="{{ .Permalink }}">*/}}
-{{/*
-<meta property="og:site_name" content="{{ .Site.Title }}">*/}}
-{{/*
-<meta property="og:image" content="{{ .Site.BaseURL }}images/og-cover.jpg">*/}}
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="L'Éco Forge du Web : du code sobre, des produits qui durent.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
 
-<!-- Twitter Card -->
-{{/*
-<meta name="twitter:card" content="summary_large_image">*/}}
-{{/*
-<meta name="twitter:title" content="{{ .Title }}">*/}}
-{{/*
-<meta name="twitter:description"
-      content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">*/}}
-{{/*
-<meta name="twitter:image" content="{{ .Site.BaseURL }}images/og-cover.jpg">*/}}
-
-{{ if site.Params.glide.glideCss }}
-    <link rel="preload" href="{{ site.Params.glide.glideCss }}" as="style" integrity="{{ .Data.Integrity }}"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ site.Params.glide.glideCss }}" integrity="{{ .Data.Integrity }}"
-          crossorigin="anonymous">
-{{ end }}
+<link rel="preload" href="/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 
 {{ with resources.Get "scss/main.scss" }}
     {{ $opts := dict
@@ -61,48 +42,76 @@
     {{ with . | toCSS $opts }}
         {{ if hugo.IsProduction }}
             {{ with . | fingerprint }}
-                <link rel="preload" href="{{ .RelPermalink }}" as="style" integrity="{{ .Data.Integrity }}"
-                      crossorigin="anonymous">
-                <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"
-                      crossorigin="anonymous">
+                <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
             {{ end }}
         {{ else }}
-            <link rel="preload" href="{{ .RelPermalink }}" as="style">
             <link rel="stylesheet" href="{{ .RelPermalink }}">
         {{ end }}
     {{ end }}
 {{ end }}
 
-<script defer type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "L'Éco Forge du Web",
-        "url": "https://lecoforgeduweb.fr",
-        "logo": "/images/laforgeduweb.svg",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+33632899791",
-            "contactType": "Customer Service",
-            "email": "contact@laforgeduweb.fr"
-        }
-    }
-</script>
-
-<!-- Remplacez votre script Plausible actuel par : -->
-<script>
-    // Charge Plausible après que la page soit stable
-    window.addEventListener('load', function () {
-        setTimeout(function () {
-            const script = document.createElement('script');
-            script.defer = true;
-            script.src = 'https://plausible.io/js/script.hash.tagged-events.js';
-            script.setAttribute('data-domain', 'lecoforgeduweb.fr');
-            document.head.appendChild(script);
-        }, 2000); // Attend 2 secondes après le load
-    });
-
-    window.plausible = window.plausible || function () {
-        (window.plausible.q = window.plausible.q || []).push(arguments)
-    }
-</script>
+{{ if .IsHome }}
+{{ $site := "https://www.lecoforgeduweb.fr/" }}
+{{ $sameAs := slice
+    "https://www.linkedin.com/in/thomas-dufoss%C3%A9-michelangeli"
+    "https://github.com/ThomasLFDW"
+    "https://www.instagram.com/leco_forgeduweb/"
+    "https://www.facebook.com/lecoforgeduweb"
+}}
+{{ $day := "jour" }}
+{{ $offers := slice
+    (dict "@type" "Offer" "name" "Développement web" "description" "Sites vitrines, refontes, sites éco-conçus, WordPress." "priceSpecification" (dict "@type" "UnitPriceSpecification" "price" 450 "priceCurrency" "EUR" "unitText" $day))
+    (dict "@type" "Offer" "name" "Fullstack JavaScript" "description" "Applications web, SaaS, MVP, reprise de projets existants." "priceSpecification" (dict "@type" "UnitPriceSpecification" "price" 550 "priceCurrency" "EUR" "unitText" $day))
+    (dict "@type" "Offer" "name" "Agents IA et conseil" "description" "Agents sur mesure, automatisation, accompagnement d'équipe technique." "priceSpecification" (dict "@type" "UnitPriceSpecification" "minPrice" 600 "maxPrice" 800 "priceCurrency" "EUR" "unitText" $day))
+}}
+{{ $questions := slice }}
+{{ range site.Data.faq }}
+    {{ $questions = $questions | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}
+{{ end }}
+{{ $graph := slice
+    (dict
+        "@type" "ProfessionalService"
+        "@id" (print $site "#entreprise")
+        "name" "L'Éco Forge du Web"
+        "url" $site
+        "logo" (print $site "images/lecoforgeduweb.svg")
+        "image" $ogImage
+        "description" $description
+        "founder" (dict "@id" (print $site "#thomas"))
+        "foundingDate" "2018"
+        "email" "contact@lecoforgeduweb.fr"
+        "telephone" "+33632899791"
+        "priceRange" "450 € à 800 € par jour"
+        "address" (dict "@type" "PostalAddress" "addressLocality" "Aix-en-Provence" "addressRegion" "Provence-Alpes-Côte d'Azur" "addressCountry" "FR")
+        "areaServed" (slice
+            (dict "@type" "City" "name" "Aix-en-Provence")
+            (dict "@type" "AdministrativeArea" "name" "Bouches-du-Rhône")
+            (dict "@type" "Country" "name" "France"))
+        "knowsAbout" (slice "Éco-conception web" "Développement fullstack" "Next.js" "TypeScript" "Astro" "Hugo" "WordPress" "PHP" "Laravel" "Agents IA" "Automatisation" "SEO")
+        "hasOfferCatalog" (dict "@type" "OfferCatalog" "name" "Tarifs à la journée (TVA non applicable)" "itemListElement" $offers)
+        "sameAs" $sameAs)
+    (dict
+        "@type" "Person"
+        "@id" (print $site "#thomas")
+        "name" "Thomas Dufossé-Michelangeli"
+        "jobTitle" "Développeur fullstack freelance et orchestrateur IA"
+        "image" (print $site "images/refonte/thomas.webp")
+        "url" $site
+        "email" "contact@lecoforgeduweb.fr"
+        "worksFor" (dict "@id" (print $site "#entreprise"))
+        "homeLocation" (dict "@type" "Place" "name" "Aix-en-Provence")
+        "sameAs" (slice "https://www.linkedin.com/in/thomas-dufoss%C3%A9-michelangeli" "https://github.com/ThomasLFDW"))
+    (dict
+        "@type" "WebSite"
+        "@id" (print $site "#site")
+        "name" "L'Éco Forge du Web"
+        "url" $site
+        "inLanguage" "fr-FR"
+        "publisher" (dict "@id" (print $site "#entreprise")))
+    (dict
+        "@type" "FAQPage"
+        "@id" (print $site "#faq")
+        "mainEntity" $questions)
+}}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>
+{{ end }}

@@ -9,9 +9,6 @@ env = "dev" # ou "prod"
 category = ""
 tag = ""
 
-[outputs]
-home = [ "HTML", "SITEMAP" ]
-
 [[headers]]
 for = '/**'
 [headers.values]

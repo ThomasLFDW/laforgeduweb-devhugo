@@ -1,7 +1,9 @@
 RewriteEngine On
-# Redirection automatique vers HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Une seule adresse : https://www.lecoforgeduweb.fr (HTTPS et www en une seule redirection)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^lecoforgeduweb\.fr$ [NC]
+RewriteRule ^ https://www.lecoforgeduweb.fr%{REQUEST_URI} [L,R=301]
 
 <FilesMatch "\.php$">
   Order allow,deny
@@ -16,17 +18,18 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 <IfModule mod_headers.c>
     Header set X-Frame-Options "DENY"
     Header set X-Content-Type-Options "nosniff"
-    Header set X-XSS-Protection "1; mode=block"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
-#    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline';style-src 'self' 'unsafe-inline';img-src 'self' data: https:;font-src 'self' https:;connect-src 'self';object-src 'none';base-uri 'self';form-action 'self';"
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://plausible.io; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
 </IfModule>
 
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/webp "access plus 6 months"
   ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/png "access plus 6 months"
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 6 months"
 </IfModule>

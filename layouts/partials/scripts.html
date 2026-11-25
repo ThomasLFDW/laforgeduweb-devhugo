@@ -1,12 +1,3 @@
-{{ if site.Params.glide.glideJs }}
-    <script src="{{ site.Params.glide.glideJs }}" crossorigin="anonymous" defer></script>
-{{ end }}
-{{ if site.Params.params.masonryJs }}
-    <script src="{{ site.Params.params.masonryJs }}" crossorigin="anonymous" defer></script>
-{{ end }}
-
-
-
 {{ $script := resources.Get "js/main.js" }}
 {{ $opts := dict
         "minify" hugo.IsProduction

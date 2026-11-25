@@ -1,11 +1,1 @@
-[glide]
-glideJs = "/js/glide.min.js"
-glideCss = "/css/glide.core.min.css"
-
-[params]
-masonryJs = "/js/masonry.min.js"
-
-
-
-
-
+description = "Sites éco-conçus, applications web et agents IA pour agences, startups, PME et structures engagées. Développeur fullstack freelance, web sobre."

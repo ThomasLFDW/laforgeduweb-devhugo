@@ -1,4 +1,4 @@
 ---
-title: "Création de site internet & Optimisation pour les moteurs de recherche | L'Éco Forge du Web"
-description: "Développeur web spécialisé en création de sites performants et optimisation pour les moteurs de recherche. Améliorez votre visibilité dès aujourd'hui !"
+title: "Développeur web freelance, éco-conception et agents IA"
+description: "Sites éco-conçus, applications web et agents IA pour agences, startups, PME et structures engagées. Développeur fullstack freelance, web sobre, depuis 2018."
 ---
