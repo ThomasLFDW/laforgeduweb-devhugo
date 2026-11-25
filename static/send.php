@@ -92,7 +92,7 @@ if (rateLimited($_SERVER['REMOTE_ADDR'] ?? 'unknown')) {
     respond(429, false, 'Trop de messages envoyés');
 }
 
-$config = require __DIR__ . '/phpmailer/config.mail.php';
+$config = require __DIR__ . '/config.mail.php';
 $mail = new PHPMailer(true);
 
 try {
