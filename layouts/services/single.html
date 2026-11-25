@@ -1,0 +1,110 @@
+{{ define "main" }}
+{{ $page := . }}
+{{ $rdv := "https://calendar.app.google/GTLWHEFwgLLn2AQu5" }}
+
+<section class="page-hero">
+    <div class="container stack-l">
+        {{ partial "breadcrumb.html" . }}
+        <div class="page-hero__grid">
+            <div class="stack-l">
+                <p class="pill"><span class="pill__dot" aria-hidden="true"></span>{{ .Params.label }}</p>
+                <h1>{{ .Params.h1 }}</h1>
+                <p class="hero__lead">{{ .Params.lead }}</p>
+                <div class="actions">
+                    <a class="btn btn--primary" href="{{ $rdv }}" target="_blank" rel="noopener">Réserver un appel de 15 min {{ partial "icon.html" "arrow" }}</a>
+                    <a class="btn btn--secondary" href="#contact">Écrire un message</a>
+                </div>
+            </div>
+            <aside class="summary">
+                <span class="icon-chip">{{ partial "icon.html" .Params.icon }}</span>
+                <p class="label label--on-dark">En bref</p>
+                <p class="summary__price">{{ .Params.price }}</p>
+                <p>{{ .Params.priceNote }}</p>
+                <ul class="tags tags--dark">{{ range .Params.tags }}<li class="tag">{{ . }}</li>{{ end }}</ul>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section class="section section--alt">
+    <div class="container stack-xl">
+        <header class="section__head">
+            <p class="label label--accent">Ce que vous obtenez</p>
+            <h2>{{ .Params.deliverablesTitle }}</h2>
+        </header>
+        <div class="grid grid--3">
+            {{ range .Params.deliverables }}
+            <div class="card feature"><h3>{{ .title }}</h3><p>{{ .text }}</p></div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container grid grid--2 grid--start">
+        <div class="stack-l">
+            <p class="label label--accent">Pour qui</p>
+            <h2>{{ .Params.audienceTitle }}</h2>
+            <ul class="checklist">
+                {{ range .Params.audiences }}<li><span class="check" aria-hidden="true">{{ partial "icon.html" "check" }}</span>{{ . }}</li>{{ end }}
+            </ul>
+        </div>
+        <div class="stack-l">
+            <p class="label label--accent">Déroulé</p>
+            <h2>Comment ça se passe.</h2>
+            <ol class="steps steps--stacked">
+                {{ range $i, $s := .Params.steps }}
+                <li><span class="mono">0{{ add $i 1 }}</span><h3>{{ $s.title }}</h3><p>{{ $s.text }}</p></li>
+                {{ end }}
+            </ol>
+        </div>
+    </div>
+</section>
+
+{{ with .Params.projects }}
+<section class="section section--alt">
+    <div class="container stack-xl">
+        <header class="section__head">
+            <p class="label label--accent">Réalisations</p>
+            <h2>Ce que ça donne, en vrai.</h2>
+        </header>
+        <div class="grid grid--projects grid--count-{{ len . }}">
+            {{ range . }}{{ with index (where site.Data.realisations "id" .) 0 }}{{ partial "project.html" (merge . (dict "kind" "mini")) }}{{ end }}{{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+
+<section class="section">
+    <div class="container grid grid--faq">
+        <header class="stack-m">
+            <p class="label label--accent">Questions fréquentes</p>
+            <h2>{{ .Params.short }} : vos questions.</h2>
+            <p class="muted">Tarifs détaillés : <a href="/#tarifs">voir tous les tarifs</a>.</p>
+        </header>
+        <div class="faq">
+            {{ range $i, $f := .Params.faq }}
+            <details name="faq"{{ if eq $i 0 }} open{{ end }}>
+                <summary>{{ $f.q }}<span class="faq__sign" aria-hidden="true"></span></summary>
+                <p>{{ $f.a }}</p>
+            </details>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section class="section section--alt">
+    <div class="container stack-xl">
+        <header class="section__head">
+            <p class="label label--accent">Aussi</p>
+            <h2>Les autres services.</h2>
+        </header>
+        <div class="grid grid--3">
+            {{ range site.Data.services }}{{ if ne .url $page.RelPermalink }}{{ partial "service-card.html" . }}{{ end }}{{ end }}
+        </div>
+        <p class="cities-line"><span class="label">Partout en France, à distance</span>{{ range $i, $v := site.Data.villes }}{{ if $i }}<span aria-hidden="true">·</span>{{ end }}<a href="{{ $v.url }}">{{ $v.name }}</a>{{ end }}</p>
+    </div>
+</section>
+
+{{ partial "contact.html" (dict "need" .Params.need "title" .Params.contactTitle) }}
+{{ end }}

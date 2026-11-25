@@ -65,6 +65,10 @@ function loadAnalytics() {
   document.head.appendChild(script);
 }
 
+document.querySelectorAll('.mobile-nav').forEach((menu) => {
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) menu.open = false; });
+});
+
 document.querySelectorAll('[data-tabs]').forEach(initTabs);
 document.querySelectorAll('[data-contact-form]').forEach(initContactForm);
 window.addEventListener('load', () => setTimeout(loadAnalytics, 2000));

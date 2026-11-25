@@ -1,0 +1,89 @@
+{{ define "main" }}
+{{ $page := . }}
+{{ $rdv := "https://calendar.app.google/GTLWHEFwgLLn2AQu5" }}
+
+<section class="page-hero">
+    <div class="container stack-l">
+        {{ partial "breadcrumb.html" . }}
+        <div class="page-hero__grid">
+            <div class="stack-l">
+                <p class="pill"><span class="pill__dot" aria-hidden="true"></span>Développeur fullstack freelance · {{ .Params.city }}</p>
+                <h1>{{ .Params.h1 }}</h1>
+                <p class="hero__lead">{{ .Params.lead }}</p>
+                <div class="actions">
+                    <a class="btn btn--primary" href="{{ $rdv }}" target="_blank" rel="noopener">Réserver un appel de 15 min {{ partial "icon.html" "arrow" }}</a>
+                    <a class="btn btn--secondary" href="/#realisations">Voir les réalisations</a>
+                </div>
+            </div>
+            <aside class="summary">
+                <span class="icon-chip">{{ partial "icon.html" "sprout" }}</span>
+                <p class="label label--on-dark">Travailler ensemble depuis {{ .Params.city }}</p>
+                <p>{{ .Params.mode }}</p>
+                <p class="summary__small">Tarifs à la journée : 450 € à 800 € selon la mission, TVA non applicable.</p>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section class="section section--alt">
+    <div class="container stack-xl">
+        <header class="section__head">
+            <p class="label label--accent">Pour qui, à {{ .Params.city }}</p>
+            <h2>{{ .Params.audienceTitle }}</h2>
+            <p>{{ .Params.audienceText }}</p>
+        </header>
+        <ul class="checklist checklist--grid">
+            {{ range .Params.audiences }}<li><span class="check" aria-hidden="true">{{ partial "icon.html" "check" }}</span>{{ . }}</li>{{ end }}
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container stack-xl">
+        <header class="section__head">
+            <p class="label label--accent">Services</p>
+            <h2>Ce que je fais pour les structures de {{ .Params.city }}.</h2>
+        </header>
+        <div class="grid grid--2">
+            {{ range site.Data.services }}{{ partial "service-card.html" . }}{{ end }}
+        </div>
+    </div>
+</section>
+
+<section class="section section--alt">
+    <div class="container stack-xl">
+        <header class="section__head">
+            <p class="label label--accent">Réalisations</p>
+            <h2>{{ .Params.projectsTitle | default "Quelques réalisations récentes." }}</h2>
+        </header>
+        <div class="grid grid--projects grid--count-{{ len .Params.projects }}">
+            {{ range .Params.projects }}{{ with index (where site.Data.realisations "id" .) 0 }}{{ partial "project.html" (merge . (dict "kind" "mini")) }}{{ end }}{{ end }}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container grid grid--faq">
+        <header class="stack-m">
+            <p class="label label--accent">Questions fréquentes</p>
+            <h2>Développeur web à {{ .Params.city }} : vos questions.</h2>
+        </header>
+        <div class="faq">
+            {{ range $i, $f := .Params.faq }}
+            <details name="faq"{{ if eq $i 0 }} open{{ end }}>
+                <summary>{{ $f.q }}<span class="faq__sign" aria-hidden="true"></span></summary>
+                <p>{{ $f.a }}</p>
+            </details>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section class="section section--alt">
+    <div class="container">
+        <p class="cities-line"><span class="label">Aussi</span>{{ $first := true }}{{ range site.Data.villes }}{{ if ne .url $page.RelPermalink }}{{ if not $first }}<span aria-hidden="true">·</span>{{ end }}{{ $first = false }}<a href="{{ .url }}">Développeur web à {{ .name }}</a>{{ end }}{{ end }}</p>
+    </div>
+</section>
+
+{{ partial "contact.html" (dict "title" (printf "Un projet à %s ?" .Params.city)) }}
+{{ end }}

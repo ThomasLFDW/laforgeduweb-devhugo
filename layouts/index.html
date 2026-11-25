@@ -83,19 +83,7 @@
             <p class="muted">Un seul interlocuteur, de la base de données à l'interface, avec un code documenté que vos équipes peuvent reprendre.</p>
         </header>
         <div class="grid grid--2">
-            {{ range slice
-                (dict "icon" "leaf" "title" "Sites web éco-conçus" "text" "Sites vitrines, refontes et boutiques en ligne : des pages légères, rapides et bien référencées, qui consomment moins à chaque visite." "tags" (slice "Astro" "Hugo" "WordPress" "Refonte SEO"))
-                (dict "icon" "app" "title" "Applications web et SaaS" "text" "Un produit web ou un SaaS de A à Z, un outil métier qui vous rend du temps chaque semaine. Je reprends aussi les projets existants, en JavaScript comme en PHP." "tags" (slice "Next.js" "TypeScript" "PostgreSQL" "Stripe" "PHP et Laravel"))
-                (dict "icon" "bot" "title" "Agents IA et automatisation" "text" "Des agents qui relisent le code, rédigent la documentation, trient les mails et préparent les devis. Et un accompagnement pour mettre l'IA au travail dans votre équipe technique, avec une méthode et des garde-fous." "tags" (slice "Revue de code" "Documentation" "Mails et devis" "Accompagnement d'équipe"))
-                (dict "icon" "users" "title" "Renfort d'équipe et CTO" "text" "Renfort d'agence en marque blanche, régie à distance pour les ESN, ou CTO à temps partagé pour structurer une startup." "tags" (slice "Marque blanche" "Régie à distance" "CTO à temps partagé"))
-            }}
-            <article class="card card--lg service">
-                <span class="icon-chip">{{ partial "icon.html" .icon }}</span>
-                <h3>{{ .title }}</h3>
-                <p>{{ .text }}</p>
-                <ul class="tags">{{ range .tags }}<li class="tag">{{ . }}</li>{{ end }}</ul>
-            </article>
-            {{ end }}
+            {{ range site.Data.services }}{{ partial "service-card.html" . }}{{ end }}
         </div>
     </div>
 </section>
@@ -219,63 +207,13 @@
         </header>
 
         <div class="grid grid--2">
-            {{ range slice
-                (dict "url" "framae.com" "img" "framae.webp" "alt" "Page d'accueil de Framae" "badge" "CTO et architecte IA" "date" "2025 – 2026" "title" "Framae" "text" "Produit grand public qui génère des portraits personnalisés à partir d'une date de naissance, avec un texte rédigé par LLM. Refonte du parcours d'achat, offre à la carte, conformité RGPD." "kpi" "40 → 300+" "kpiLabel" "pages publiques indexables" "stack" "Next.js · tRPC · PostgreSQL · Stripe")
-                (dict "url" "weibelchouquettes.fr" "img" "weibel-chouquettes.webp" "alt" "Page d'accueil de Weibel Chouquettes" "badge" "Outil métier" "date" "2025 – 2026" "title" "Weibel Chouquettes" "text" "Click and Collect avec paiement Square, caisse comptoir avec impression de tickets, catalogue synchronisé chaque nuit." "kpi" "Site + caisse" "kpiLabel" "un seul catalogue" "stack" "Astro · SvelteKit · Strapi · Square")
-            }}
-            <article class="card project">
-                <div class="browser">
-                    <div class="browser__bar"><span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span><a href="https://{{ .url }}" target="_blank" rel="noopener" class="mono">{{ .url }}</a></div>
-                    <img src="/images/refonte/realisations/{{ .img }}" alt="{{ .alt }}" width="960" height="600" loading="lazy">
-                </div>
-                <div class="project__body">
-                    <ul class="tags"><li class="tag tag--tint">{{ .badge }}</li><li class="tag tag--outline">{{ .date }}</li></ul>
-                    <h3>{{ .title }}</h3>
-                    <p>{{ .text }}</p>
-                    <div class="project__kpi"><strong>{{ .kpi }}</strong><span>{{ .kpiLabel }}</span><span class="mono">{{ .stack }}</span></div>
-                </div>
-            </article>
-            {{ end }}
+            {{ range where site.Data.realisations "kind" "product" }}{{ partial "project.html" . }}{{ end }}
         </div>
-
         <div class="grid grid--2">
-            {{ range slice
-                (dict "url" "saintsauveurboulangerie.fr" "img" "saint-sauveur.webp" "alt" "Page d'accueil de la boulangerie Saint-Sauveur" "date" "Création · 2025" "title" "Boulangerie Saint-Sauveur" "text" "Premier site éco-conçu de L'Éco Forge du Web, pour une boulangerie d'Aix-en-Provence." "m3" "vs un CMS" "v3" "−90 %")
-                (dict "url" "lesarnauds.com" "img" "les-arnauds.webp" "alt" "Page d'accueil des Arnauds, chambres d'hôtes" "date" "Refonte · 2025" "title" "Les Arnauds, chambres d'hôtes" "text" "Refonte du site d'un mas provençal en version écologique." "m3" "Sites plus verts" "v3" "top 25 %")
-            }}
-            <article class="card project">
-                <div class="browser">
-                    <div class="browser__bar"><span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span><a href="https://{{ .url }}" target="_blank" rel="noopener" class="mono">{{ .url }}</a></div>
-                    <img src="/images/refonte/realisations/{{ .img }}" alt="{{ .alt }}" width="960" height="600" loading="lazy">
-                </div>
-                <div class="project__body">
-                    <ul class="tags"><li class="tag tag--tint">Éco-conçu</li><li class="tag tag--outline">{{ .date }}</li></ul>
-                    <h3>{{ .title }}</h3>
-                    <p>{{ .text }}</p>
-                    <dl class="metrics">
-                        <div><dt>PageSpeed</dt><dd>100/100</dd></div>
-                        <div><dt>CO₂ par visite</dt><dd>0,219 g</dd></div>
-                        <div><dt>{{ .m3 }}</dt><dd>{{ .v3 }}</dd></div>
-                    </dl>
-                </div>
-            </article>
-            {{ end }}
+            {{ range where site.Data.realisations "kind" "eco" }}{{ partial "project.html" . }}{{ end }}
         </div>
-
         <div class="grid grid--4">
-            {{ range slice
-                (dict "img" "/images/refonte/realisations/we-do-it-better.webp" "alt" "Site de We Do It Better" "badge" "Marque blanche" "tint" true "title" "We Do It Better" "text" "Refonte complète en HTML, CSS et JavaScript avec API Drupal, pour leur client Lefebvre Dalloz.")
-                (dict "img" "/images/refonte/realisations/artrade.webp" "alt" "Page d'accueil d'Artrade" "badge" "Plateforme" "tint" false "title" "Artrade" "text" "Plateforme ICO sous Laravel et automatisation des transactions crypto.")
-                (dict "img" "/images/portfolio/conqueryourday.webp" "alt" "Conquer Your Day" "badge" "Équipe et intégration" "tint" false "title" "Conquer Your Day" "text" "Création de l'équipe dev, site multilingue et API Strava sous WordPress.")
-                (dict "img" "/images/portfolio/lppdj.webp" "alt" "Les Petits Plats du Jour" "badge" "E-commerce" "tint" false "title" "Les Petits Plats du Jour" "text" "Pilotage, maintenance, évolutions et audit technique d'un site e-commerce WordPress.")
-            }}
-            <article class="mini-project">
-                <img src="{{ .img }}" alt="{{ .alt }}" width="640" height="400" loading="lazy">
-                <span class="tag {{ if .tint }}tag--tint{{ else }}tag--outline{{ end }}">{{ .badge }}</span>
-                <h3>{{ .title }}</h3>
-                <p>{{ .text }}</p>
-            </article>
-            {{ end }}
+            {{ range where site.Data.realisations "kind" "mini" }}{{ partial "project.html" . }}{{ end }}
         </div>
         <p class="muted small">Et aussi : Kaporal, Mercure, Corsica.fr, Pompiers 13, My Wooding, Standard Film, La Balnéaire, Aurelia Edition.</p>
     </div>
@@ -373,39 +311,5 @@
     </div>
 </section>
 
-<section id="contact" class="section section--alt">
-    <div class="container">
-        <div class="contact">
-            <div class="stack-l">
-                <p class="label label--leaf">Contact</p>
-                <h2>Un projet, un renfort, une question ?</h2>
-                <p>15 minutes suffisent pour savoir si nous pouvons travailler ensemble. Réservez un créneau, ou écrivez-moi.</p>
-                <a class="btn btn--leaf" href="{{ $rdv }}" target="_blank" rel="noopener">Réserver un appel de 15 min {{ partial "icon.html" "arrow" }}</a>
-                <p class="contact__mail"><span class="label label--on-dark">Par email</span><a href="mailto:contact@lecoforgeduweb.fr">contact@lecoforgeduweb.fr</a></p>
-            </div>
-            <form class="contact__form" action="/send.php" method="POST" data-contact-form>
-                <div class="contact__trap" aria-hidden="true">
-                    <label for="c-website">Ne pas remplir<input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off"></label>
-                </div>
-                <input type="hidden" name="started_at" value="">
-                <label for="c-nom">Nom<input id="c-nom" name="name" type="text" autocomplete="name" maxlength="100" required></label>
-                <label for="c-email">Email<input id="c-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
-                <label for="c-structure">Structure<input id="c-structure" name="structure" type="text" autocomplete="organization" maxlength="150"></label>
-                <label for="c-besoin">Votre besoin
-                    <select id="c-besoin" name="besoin">
-                        <option>Site web</option>
-                        <option>Application web ou SaaS</option>
-                        <option>Agent IA ou automatisation</option>
-                        <option>Renfort ou CTO</option>
-                    </select>
-                </label>
-                <label for="c-message" class="contact__wide">Message<textarea id="c-message" name="message" rows="4" maxlength="5000" required></textarea></label>
-                <div class="contact__wide contact__submit">
-                    <p class="small" data-form-status role="status">Vos coordonnées servent uniquement à vous répondre.</p>
-                    <button type="submit" class="btn btn--ghost">Envoyer le message</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
+{{ partial "contact.html" (dict) }}
 {{ end }}

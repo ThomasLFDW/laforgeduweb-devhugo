@@ -1,0 +1,34 @@
+{{- /* Bloc contact. Contexte : dict "need" (option présélectionnée, facultative) et "title" (facultatif). */ -}}
+{{ $needs := slice "Site web" "Application web ou SaaS" "Agent IA ou automatisation" "Renfort ou CTO" }}
+<section id="contact" class="section section--alt section--contact">
+    <div class="container">
+        <div class="contact">
+            <div class="stack-l">
+                <p class="label label--leaf">Contact</p>
+                <h2>{{ .title | default "Un projet, un renfort, une question ?" }}</h2>
+                <p>15 minutes suffisent pour savoir si nous pouvons travailler ensemble. Réservez un créneau, ou écrivez-moi.</p>
+                <a class="btn btn--leaf" href="https://calendar.app.google/GTLWHEFwgLLn2AQu5" target="_blank" rel="noopener">Réserver un appel de 15 min {{ partial "icon.html" "arrow" }}</a>
+                <p class="contact__mail"><span class="label label--on-dark">Par email</span><a href="mailto:contact@lecoforgeduweb.fr">contact@lecoforgeduweb.fr</a></p>
+            </div>
+            <form class="contact__form" action="/send.php" method="POST" data-contact-form>
+                <div class="contact__trap" aria-hidden="true">
+                    <label for="c-website">Ne pas remplir<input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off"></label>
+                </div>
+                <input type="hidden" name="started_at" value="">
+                <label for="c-nom">Nom<input id="c-nom" name="name" type="text" autocomplete="name" maxlength="100" required></label>
+                <label for="c-email">Email<input id="c-email" name="email" type="email" autocomplete="email" maxlength="254" required></label>
+                <label for="c-structure">Structure<input id="c-structure" name="structure" type="text" autocomplete="organization" maxlength="150"></label>
+                <label for="c-besoin">Votre besoin
+                    <select id="c-besoin" name="besoin">
+                        {{ range $needs }}<option{{ if eq . $.need }} selected{{ end }}>{{ . }}</option>{{ end }}
+                    </select>
+                </label>
+                <label for="c-message" class="contact__wide">Message<textarea id="c-message" name="message" rows="4" maxlength="5000" required></textarea></label>
+                <div class="contact__wide contact__submit">
+                    <p class="small" data-form-status role="status">Vos coordonnées servent uniquement à vous répondre.</p>
+                    <button type="submit" class="btn btn--ghost">Envoyer le message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

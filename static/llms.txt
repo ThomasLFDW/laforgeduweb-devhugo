@@ -40,3 +40,11 @@ Pages légères, dépendances choisies, sites statiques quand c'est possible, h�
 - Prendre rendez-vous (15 minutes) : https://calendar.app.google/GTLWHEFwgLLn2AQu5
 - LinkedIn : https://www.linkedin.com/in/thomas-dufoss%C3%A9-michelangeli
 - GitHub : https://github.com/ThomasLFDW
+
+## Pages
+
+- Création de site web éco-conçu : https://www.lecoforgeduweb.fr/services/creation-site-eco-concu/
+- Développement d'application web et SaaS : https://www.lecoforgeduweb.fr/services/application-web-saas/
+- Agents IA et automatisation : https://www.lecoforgeduweb.fr/services/agents-ia-automatisation/
+- Renfort d'agence et CTO à temps partagé : https://www.lecoforgeduweb.fr/services/renfort-agence-cto/
+- Zones d'intervention : https://www.lecoforgeduweb.fr/villes/ (Marseille, Aix-en-Provence, Toulon, Nice, Montpellier, Avignon, Lyon, Paris ; à distance partout en France)

@@ -1,0 +1,21 @@
+# Ordre d'affichage : accueil, menu Services, pied de page, pages villes.
+- name: Sites web éco-conçus
+  url: /services/creation-site-eco-concu/
+  icon: leaf
+  summary: "Sites vitrines, refontes et boutiques en ligne : des pages légères, rapides et bien référencées, qui consomment moins à chaque visite."
+  tags: [Astro, Hugo, WordPress, Refonte SEO]
+- name: Applications web et SaaS
+  url: /services/application-web-saas/
+  icon: app
+  summary: "Un produit web ou un SaaS de A à Z, un outil métier qui vous rend du temps chaque semaine. Je reprends aussi les projets existants, en JavaScript comme en PHP."
+  tags: [Next.js, TypeScript, PostgreSQL, Stripe, PHP et Laravel]
+- name: Agents IA et automatisation
+  url: /services/agents-ia-automatisation/
+  icon: bot
+  summary: "Des agents qui relisent le code, rédigent la documentation, trient les mails et préparent les devis. Et un accompagnement pour mettre l'IA au travail dans votre équipe technique, avec une méthode et des garde-fous."
+  tags: [Revue de code, Documentation, Mails et devis, Accompagnement d'équipe]
+- name: Renfort d'équipe et CTO
+  url: /services/renfort-agence-cto/
+  icon: users
+  summary: "Renfort d'agence en marque blanche, régie à distance pour les ESN, ou CTO à temps partagé pour structurer une startup."
+  tags: [Marque blanche, Régie à distance, CTO à temps partagé]

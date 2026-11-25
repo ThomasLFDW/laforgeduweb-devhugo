@@ -1,0 +1,8 @@
+{{- /* Fil d'Ariane. Contexte : la page. */ -}}
+<nav class="breadcrumb" aria-label="Fil d'Ariane">
+    <ol>
+        <li><a href="/">Accueil</a></li>
+        {{ with .Parent }}{{ if not .IsHome }}<li><a href="{{ .RelPermalink }}">{{ .Params.short | default .Title }}</a></li>{{ end }}{{ end }}
+        <li aria-current="page">{{ .Params.short | default .Title }}</li>
+    </ol>
+</nav>

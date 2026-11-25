@@ -1,0 +1,8 @@
+{{- /* Carte de service avec lien. Contexte : une entrée de data/services.yaml. */ -}}
+<article class="card card--lg service">
+    <span class="icon-chip">{{ partial "icon.html" .icon }}</span>
+    <h3><a class="service__link" href="{{ .url }}">{{ .name }}</a></h3>
+    <p>{{ .summary }}</p>
+    <ul class="tags">{{ range .tags }}<li class="tag">{{ . }}</li>{{ end }}</ul>
+    <span class="service__more" aria-hidden="true">Découvrir le service {{ partial "icon.html" "arrow" }}</span>
+</article>

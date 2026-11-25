@@ -1,0 +1,32 @@
+{{- /* Carte de réalisation. Contexte : une entrée de data/realisations.yaml. */ -}}
+{{ if eq .kind "mini" }}
+<article class="mini-project">
+    {{ with .logo }}
+    <div class="mini-project__logo"><img src="{{ . }}" alt="{{ $.alt }}" loading="lazy"></div>
+    {{ else }}
+    <img class="mini-project__shot" src="{{ .img }}" alt="{{ .alt }}" width="1200" height="750" loading="lazy">
+    {{ end }}
+    <span class="tag {{ if eq .badge "Marque blanche" }}tag--tint{{ else }}tag--outline{{ end }}">{{ .badge }}</span>
+    <h3>{{ .title }}</h3>
+    <p>{{ .text }}</p>
+</article>
+{{ else }}
+<article class="card project">
+    <div class="browser">
+        <div class="browser__bar"><span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span><a href="https://{{ .url }}" target="_blank" rel="noopener" class="mono">{{ .url }}</a></div>
+        <img src="{{ .img }}" alt="{{ .alt }}" width="960" height="600" loading="lazy">
+    </div>
+    <div class="project__body">
+        <ul class="tags"><li class="tag tag--tint">{{ .badge }}</li><li class="tag tag--outline">{{ .date }}</li></ul>
+        <h3>{{ .title }}</h3>
+        <p>{{ .text }}</p>
+        {{ if eq .kind "eco" }}
+        <dl class="metrics">
+            {{ range .metrics }}<div><dt>{{ index . 0 }}</dt><dd>{{ index . 1 }}</dd></div>{{ end }}
+        </dl>
+        {{ else }}
+        <div class="project__kpi"><strong>{{ .kpi }}</strong><span>{{ .kpiLabel }}</span><span class="mono">{{ .stack }}</span></div>
+        {{ end }}
+    </div>
+</article>
+{{ end }}

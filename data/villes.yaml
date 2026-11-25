@@ -1,0 +1,17 @@
+# Du Sud vers Paris. L'ordre sert au pied de page et aux liens entre villes.
+- name: Marseille
+  url: /developpeur-web-marseille/
+- name: Aix-en-Provence
+  url: /developpeur-web-aix-en-provence/
+- name: Toulon
+  url: /developpeur-web-toulon/
+- name: Nice
+  url: /developpeur-web-nice/
+- name: Montpellier
+  url: /developpeur-web-montpellier/
+- name: Avignon
+  url: /developpeur-web-avignon/
+- name: Lyon
+  url: /developpeur-web-lyon/
+- name: Paris
+  url: /developpeur-web-paris/

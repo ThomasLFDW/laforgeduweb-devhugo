@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section class="page-hero">
+    <div class="container stack-l">
+        {{ partial "breadcrumb.html" . }}
+        <div class="stack-l page-hero__single">
+            <p class="pill"><span class="pill__dot" aria-hidden="true"></span>{{ .Params.label }}</p>
+            <h1>{{ .Params.h1 }}</h1>
+            <p class="hero__lead">{{ .Params.lead }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="section section--alt">
+    <div class="container">
+        {{ if eq .Section "services" }}
+        <div class="grid grid--2">
+            {{ range site.Data.services }}{{ partial "service-card.html" . }}{{ end }}
+        </div>
+        {{ else }}
+        <div class="grid grid--4">
+            {{ range site.Data.villes }}
+            <a class="card city-card" href="{{ .url }}"><span class="label label--accent">Développeur web</span><strong>{{ .name }}</strong></a>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+{{ partial "contact.html" (dict) }}
+{{ end }}

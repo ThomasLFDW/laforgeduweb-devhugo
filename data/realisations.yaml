@@ -1,0 +1,80 @@
+# kind : product (grande carte avec indicateur), eco (grande carte avec mesures), mini (petite carte).
+# Les pages services et villes citent les réalisations par leur id.
+- id: framae
+  kind: product
+  title: Framae
+  url: framae.com
+  img: /images/refonte/realisations/framae.webp
+  alt: Page d'accueil de Framae
+  badge: CTO et architecte IA
+  date: 2025 – 2026
+  text: "Produit grand public qui génère des portraits personnalisés à partir d'une date de naissance, avec un texte rédigé par LLM. Refonte du parcours d'achat, offre à la carte, conformité RGPD."
+  kpi: 40 → 300+
+  kpiLabel: pages publiques indexables
+  stack: Next.js · tRPC · PostgreSQL · Stripe
+- id: weibel
+  kind: product
+  title: Weibel Chouquettes
+  url: weibelchouquettes.fr
+  img: /images/refonte/realisations/weibel-chouquettes.webp
+  alt: Page d'accueil de Weibel Chouquettes
+  badge: Outil métier
+  date: 2025 – 2026
+  text: "Click and Collect avec paiement Square, caisse comptoir avec impression de tickets, catalogue synchronisé chaque nuit."
+  kpi: Site + caisse
+  kpiLabel: un seul catalogue
+  stack: Astro · SvelteKit · Strapi · Square
+- id: saint-sauveur
+  kind: eco
+  title: Boulangerie Saint-Sauveur
+  url: saintsauveurboulangerie.fr
+  img: /images/refonte/realisations/saint-sauveur.webp
+  alt: Page d'accueil de la boulangerie Saint-Sauveur
+  badge: Éco-conçu
+  date: Création · 2025
+  text: "Premier site éco-conçu de L'Éco Forge du Web, pour une boulangerie d'Aix-en-Provence."
+  metrics:
+    - ["PageSpeed", "100/100"]
+    - ["CO₂ par visite", "0,219 g"]
+    - ["vs un CMS", "−90 %"]
+- id: les-arnauds
+  kind: eco
+  title: Les Arnauds, chambres d'hôtes
+  url: lesarnauds.com
+  img: /images/refonte/realisations/les-arnauds.webp
+  alt: Page d'accueil des Arnauds, chambres d'hôtes
+  badge: Éco-conçu
+  date: Refonte · 2025
+  text: "Refonte du site d'un mas provençal d'Aix-en-Provence en version écologique."
+  metrics:
+    - ["PageSpeed", "100/100"]
+    - ["CO₂ par visite", "0,219 g"]
+    - ["Sites plus verts", "top 25 %"]
+- id: wdib
+  kind: mini
+  title: We Do It Better
+  img: /images/refonte/realisations/we-do-it-better.webp
+  alt: Site de We Do It Better
+  badge: Marque blanche
+  text: "Refonte complète en HTML, CSS et JavaScript avec API Drupal, pour leur client Lefebvre Dalloz."
+- id: artrade
+  kind: mini
+  title: Artrade
+  img: /images/refonte/realisations/artrade.webp
+  alt: Page d'accueil d'Artrade
+  badge: Plateforme
+  text: "Plateforme ICO sous Laravel et automatisation des transactions crypto."
+- id: cyd
+  kind: mini
+  title: Conquer Your Day
+  img: /images/refonte/realisations/conquer-your-day.webp
+  alt: Page d'accueil de Conquer Your Day
+  badge: Équipe et intégration
+  text: "Création de l'équipe dev, site multilingue et API Strava sous WordPress."
+- id: lppdj
+  kind: mini
+  title: Les Petits Plats du Jour
+  logo: /images/refonte/logos/lppdj.webp
+  alt: Logo des Petits Plats du Jour
+  badge: E-commerce
+  text: "Pilotage, maintenance, évolutions et audit technique d'un site e-commerce WordPress."

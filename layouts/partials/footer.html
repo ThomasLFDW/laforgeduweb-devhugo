@@ -2,19 +2,28 @@
     <div class="container">
         <div class="site-footer__top">
             <div class="site-footer__brand">
-                <a href="#top" class="brand">
-                    <img src="/images/lecoforgeduweb.svg" alt="" width="40" height="40" loading="lazy">
-                    <span>L'Éco Forge du Web</span>
+                <a href="/" class="brand">
+                    <img src="/images/lecoforgeduweb.svg" alt="L'Éco Forge du Web, accueil" width="64" height="64" loading="lazy">
                 </a>
-                <p>Sites, applications et agents IA. Web sobre, bureau nomade.</p>
+                <p>Sites, applications et agents IA. Web sobre, bureau nomade, basé à Aix-en-Provence.</p>
+                <a class="link-strong" href="mailto:contact@lecoforgeduweb.fr">contact@lecoforgeduweb.fr</a>
             </div>
             <div class="site-footer__links">
+                <nav aria-label="Services">
+                    <span class="label">Services</span>
+                    {{ range site.Data.services }}<a href="{{ .url }}">{{ .name }}</a>{{ end }}
+                </nav>
+                <nav aria-label="Villes">
+                    <span class="label">Villes</span>
+                    {{ range site.Data.villes }}<a href="{{ .url }}">{{ .name }}</a>{{ end }}
+                </nav>
                 <nav aria-label="Plan du site">
-                    <span class="label">Navigation</span>
-                    <a href="#services">Services</a>
-                    <a href="#realisations">Réalisations</a>
-                    <a href="#tarifs">Tarifs</a>
-                    <a href="#contact">Contact</a>
+                    <span class="label">Découvrir</span>
+                    <a href="/#equipe-ia">Méthode</a>
+                    <a href="/#realisations">Réalisations</a>
+                    <a href="/#tarifs">Tarifs</a>
+                    <a href="/#faq">FAQ</a>
+                    <a href="/#contact">Contact</a>
                 </nav>
                 <nav aria-label="Réseaux sociaux">
                     <span class="label">Réseaux</span>

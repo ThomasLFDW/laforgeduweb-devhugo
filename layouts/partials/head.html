@@ -114,4 +114,30 @@
         "mainEntity" $questions)
 }}
 <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>
+{{ else }}
+{{ $site := "https://www.lecoforgeduweb.fr/" }}
+{{ $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Accueil" "item" $site) }}
+{{ with .Parent }}{{ if not .IsHome }}
+    {{ $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" (.Params.short | default .Title) "item" .Permalink) }}
+{{ end }}{{ end }}
+{{ $crumbs = $crumbs | append (dict "@type" "ListItem" "position" (add (len $crumbs) 1) "name" (.Params.short | default .Title) "item" .Permalink) }}
+{{ $graph := slice (dict "@type" "BreadcrumbList" "itemListElement" $crumbs) }}
+{{ if .IsPage }}
+    {{ $provider := dict "@type" "ProfessionalService" "@id" (print $site "#entreprise") "name" "L'Éco Forge du Web" "url" $site }}
+    {{ $area := slice (dict "@type" "City" "name" "Aix-en-Provence") (dict "@type" "AdministrativeArea" "name" "Bouches-du-Rhône") (dict "@type" "Country" "name" "France") }}
+    {{ with .Params.city }}{{ $area = slice (dict "@type" "City" "name" .) }}{{ end }}
+    {{ $service := dict "@type" "Service" "name" (.Params.name | default .Params.h1) "description" $description "url" .Permalink "provider" $provider "areaServed" $area }}
+    {{ with .Params.priceMin }}
+        {{ $spec := dict "@type" "UnitPriceSpecification" "priceCurrency" "EUR" "unitText" "jour" }}
+        {{ with $.Params.priceMax }}{{ $spec = merge $spec (dict "minPrice" $.Params.priceMin "maxPrice" .) }}{{ else }}{{ $spec = merge $spec (dict "price" $.Params.priceMin) }}{{ end }}
+        {{ $service = merge $service (dict "offers" (dict "@type" "Offer" "priceSpecification" $spec)) }}
+    {{ end }}
+    {{ $graph = $graph | append $service }}
+    {{ with .Params.faq }}
+        {{ $questions := slice }}
+        {{ range . }}{{ $questions = $questions | append (dict "@type" "Question" "name" .q "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}{{ end }}
+        {{ $graph = $graph | append (dict "@type" "FAQPage" "mainEntity" $questions) }}
+    {{ end }}
+{{ end }}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}</script>
 {{ end }}
