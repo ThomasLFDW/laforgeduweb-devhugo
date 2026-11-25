@@ -1,0 +1,42 @@
+# L'Éco Forge du Web
+
+> Studio de développement web indépendant de Thomas Dufossé-Michelangeli, développeur fullstack freelance et orchestrateur IA, basé à Aix-en-Provence (Bouches-du-Rhône) et en activité depuis 2018. Sites éco-conçus, applications web et SaaS, agents IA et automatisation, renfort d'agence en marque blanche ou CTO à temps partagé. Clients à Aix-en-Provence, dans les Bouches-du-Rhône et partout en France, à distance.
+
+## Pour qui
+
+- Agences web : renfort en marque blanche, intégration à leurs outils (Git, tickets, revues de code).
+- Startups et SaaS : MVP, architecture, CTO à temps partagé, reprise de code existant.
+- PME et TPE : site vitrine ou refonte, boutique en ligne, outils métier, automatisation des devis et relances.
+- ESN : développeur fullstack en régie à distance (TypeScript, JavaScript, PHP).
+- Structures engagées (ESS, associations) : sites sobres, accessibles et peu énergivores.
+
+## Services et tarifs (à la journée, TVA non applicable)
+
+- Développement web : 450 € par jour. Sites vitrines, refontes, sites éco-conçus (Astro, Hugo, WordPress).
+- Fullstack JavaScript : 550 € par jour. Applications web, SaaS, MVP, reprise de projets (Next.js, TypeScript, PostgreSQL, Stripe ; historique PHP et Laravel).
+- Agents IA et conseil : 600 à 800 € par jour. Agents sur mesure (revue de code, documentation, mails, devis, suivi client) et accompagnement d'équipes techniques.
+
+## Méthode
+
+Depuis 2026, Thomas pilote une équipe d'agents IA spécialisés (développement, revue de code, red team, sécurité, SEO, rédaction, tests en navigateur). Il cadre, arbitre, relit et répond du résultat. Mesuré sur ses commits Git : 2 à 3 fois plus de travail livré par jour actif. À chaque livraison : documentation à jour, revue de code, audit de sécurité, journal de bord partagé.
+
+## Éco-conception
+
+Pages légères, dépendances choisies, sites statiques quand c'est possible, hébergement durable chez Infomaniak. Exemple : la boulangerie Saint-Sauveur (Aix-en-Provence) obtient 100/100 sur Google PageSpeed et 0,219 g de CO₂ par visite.
+
+## Réalisations
+
+- Framae (2025-2026) : CTO et architecte IA d'un produit grand public de portraits personnalisés générés par LLM ; passage de 40 à plus de 300 pages publiques indexables.
+- Weibel Chouquettes (2025-2026) : Click and Collect avec paiement Square et caisse comptoir.
+- Boulangerie Saint-Sauveur (2025) : premier site éco-conçu, Aix-en-Provence.
+- Les Arnauds (2025) : refonte écologique du site de chambres d'hôtes, Aix-en-Provence.
+- We Do It Better : refonte en marque blanche pour leur client Lefebvre Dalloz.
+- Aussi : Artrade, Conquer Your Day, Les Petits Plats du Jour, Kaporal, Mercure, Corsica.fr, Pompiers 13.
+
+## Contact
+
+- Site : https://www.lecoforgeduweb.fr/
+- Email : contact@lecoforgeduweb.fr
+- Prendre rendez-vous (15 minutes) : https://calendar.app.google/GTLWHEFwgLLn2AQu5
+- LinkedIn : https://www.linkedin.com/in/thomas-dufoss%C3%A9-michelangeli
+- GitHub : https://github.com/ThomasLFDW

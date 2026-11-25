@@ -1,0 +1,52 @@
+# Logos du bandeau « Ils m'ont fait confiance ». height = hauteur d'affichage en px.
+- name: Framae
+  src: /images/refonte/logos/framae.svg
+  height: 34
+- name: Weibel Chouquettes
+  src: /images/refonte/logos/weibel.svg
+  height: 50
+- name: Archriss
+  src: /images/refonte/logos/archriss.svg
+  height: 46
+- name: Occasion Marine
+  src: /images/refonte/logos/occasionmarine.svg
+  height: 36
+- name: Boulangerie Saint-Sauveur
+  src: /images/refonte/logos/saintsauveur.svg
+  height: 44
+- name: Artrade
+  src: /images/refonte/logos/artrade.webp
+  height: 44
+- name: Conquer Your Day
+  src: /images/refonte/logos/cyd.webp
+  height: 60
+- name: Oiseaux Rares
+  src: /images/refonte/logos/oiseaux.svg
+  height: 15
+- name: La Balnéaire
+  src: /images/refonte/logos/balneaire.webp
+  height: 54
+- name: Ibis Budget
+  src: /images/refonte/logos/ibis.webp
+  height: 48
+- name: Les Petits Plats du Jour
+  src: /images/refonte/logos/lppdj.webp
+  height: 62
+- name: Pompiers 13
+  src: /images/refonte/logos/pompier.webp
+  height: 34
+- name: Follow Your Dreams by C.
+  src: /images/refonte/logos/fyd.webp
+  height: 50
+- name: Les Arnauds
+  src: /images/refonte/logos/arnauds.webp
+  height: 54
+- name: Smile
+  src: /images/refonte/logos/smile.webp
+  height: 46
+- name: Corsica.fr
+  src: /images/refonte/logos/corsica.webp
+  height: 48
+- name: Delphine Guiblain
+  src: /images/refonte/logos/dg.webp
+  height: 56

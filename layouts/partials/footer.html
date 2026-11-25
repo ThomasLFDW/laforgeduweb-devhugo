@@ -1,24 +1,33 @@
 <footer class="site-footer">
     <div class="container">
-        <div class="footer__first-row">
-            <p>&copy; {{ now.Year }} L'Éco Forge du Web — Tous droits réservés. <br>
-                <span><a href="https://www.infomaniak.com/fr/ecologie" target="_blank" aria-label="Facebook">Hébergement durable</a> - <strong>0.05g de CO2</strong> produit à chaque visite.
-                    Parmi les 10% de sites les plus verts au monde.</span></p>
-            <div class="footer-socials">
-                <a href="https://www.facebook.com/lecoforgeduweb" target="_blank" aria-label="Facebook">
-                    {{ partial "icons/facebook-svg.html" . }}
+        <div class="site-footer__top">
+            <div class="site-footer__brand">
+                <a href="#top" class="brand">
+                    <img src="/images/lecoforgeduweb.svg" alt="" width="40" height="40" loading="lazy">
+                    <span>L'Éco Forge du Web</span>
                 </a>
-                <a href="https://www.instagram.com/leco_forgeduweb/" target="_blank" aria-label="Instagram">
-                    {{ partial "icons/instagram-svg.html" . }}
-                </a>
-                <a href="https://www.linkedin.com/in/thomas-dufoss%C3%A9-michelangeli" target="_blank"
-                   aria-label="LinkedIn">
-                    {{ partial "icons/linkedin-svg.html" . }}
-                </a>
-                <a href="https://github.com/ThomasLFDW" target="_blank" aria-label="Github">
-                    {{ partial "icons/github-svg.html" . }}
-                </a>
+                <p>Sites, applications et agents IA. Web sobre, bureau nomade.</p>
             </div>
+            <div class="site-footer__links">
+                <nav aria-label="Plan du site">
+                    <span class="label">Navigation</span>
+                    <a href="#services">Services</a>
+                    <a href="#realisations">Réalisations</a>
+                    <a href="#tarifs">Tarifs</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <nav aria-label="Réseaux sociaux">
+                    <span class="label">Réseaux</span>
+                    <a href="https://www.linkedin.com/in/thomas-dufoss%C3%A9-michelangeli" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/ThomasLFDW" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.instagram.com/leco_forgeduweb/" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://www.facebook.com/lecoforgeduweb" target="_blank" rel="noopener">Facebook</a>
+                </nav>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
+            <span>&copy; {{ now.Year }} L'Éco Forge du Web</span>
+            <span><a href="https://www.infomaniak.com/fr/ecologie" target="_blank" rel="noopener">Hébergement durable</a> · 0,05 g de CO₂ par visite</span>
         </div>
     </div>
 </footer>

@@ -1,0 +1,40 @@
+- id: agences
+  label: Agences web
+  title: Un développeur senior qui travaille sous votre marque.
+  text: Vous gardez la relation client, je m'occupe du développement. En renfort ponctuel ou sur la durée.
+  points:
+    - Intervention en marque blanche, auprès de vos clients ou en coulisses
+    - "Intégration à vos outils : Git, tickets, revues de code"
+    - Renfort sur un pic de charge ou une technologie que vous ne couvrez pas
+- id: startups
+  label: Startups et SaaS
+  title: Un CTO pour lancer, puis structurer.
+  text: Du premier MVP à une base de code que de futurs développeurs pourront reprendre.
+  points:
+    - Cadrage et développement du MVP, de la base de données à l'interface
+    - Une architecture pensée pour durer et coûter peu à héberger
+    - Reprise d'un code existant et mise en place des bonnes pratiques
+- id: pme
+  label: PME et TPE
+  title: Un site qui travaille pour vous, et moins de tâches répétitives.
+  text: Un interlocuteur unique pour votre site, vos outils internes et vos automatisations.
+  points:
+    - Refonte d'un site lent ou daté, avec un référencement soigné
+    - Boutique en ligne ou outil métier qui vous rend du temps chaque semaine
+    - Automatisation des devis, des relances et des mails de suivi
+- id: esn
+  label: ESN
+  title: Un développeur fullstack en régie, à distance.
+  text: Pour renforcer une équipe projet chez votre client, sans période d'adaptation interminable.
+  points:
+    - Missions en TypeScript, JavaScript ou PHP
+    - Habitué à rejoindre des équipes existantes et leurs process
+    - Autonome sur la reprise de projets et la documentation
+- id: engagees
+  label: Structures engagées
+  title: Un site sobre, à l'image de vos valeurs.
+  text: Pour les structures de l'ESS et les associations qui veulent un numérique cohérent avec leur mission.
+  points:
+    - Sites légers, accessibles et peu énergivores
+    - Hébergement durable
+    - Des outils simples à prendre en main par vos équipes et vos bénévoles
